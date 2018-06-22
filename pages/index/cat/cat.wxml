@@ -1,0 +1,33 @@
+<!--pages/index/cat/cat.wxml-->
+<view class='business_top_box'>
+  <image class='business_img' src='{{web_mainData.img[0].url}}'></image>
+  <rich-text class='business_text'>
+    <rich-text class='business_text_name'>{{web_mainData.title}}</rich-text>
+    <text class='business_text_class'>{{web_mainData.menu.name}}</text>
+  </rich-text>
+</view>
+
+<view class='business_link'>
+  <image class='business_link_img' src='/images/ic_pe.png'></image>
+  <text class='business_link_text'>联系人：{{web_mainData.small_title}}</text>
+</view>
+<view class='business_link'>
+  <image class='business_link_img' src='/images/ic_tel.png'></image>
+  <text class='business_link_text'>联系电话：{{web_mainData.contactPhone}}</text>
+</view>
+<view class='business_link' style='border:0;'>
+  <image class='business_link_img' src='/images/ic_address.png'></image>
+  <text class='business_link_text'>地址：{{web_mainData.description}}</text>
+</view>
+
+<view class='main_box'>
+  <view class='main_bus_title'>商家详情介绍</view>
+
+
+
+  <rich-text class='main_bus_txt'>
+    <import src="../../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+  </rich-text>
+
+</view>

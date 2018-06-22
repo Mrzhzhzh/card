@@ -1,0 +1,33 @@
+<!--pages/user_center/my_points/my_points.wxml-->
+<wxs src="../../../utils/func.wxs" module="func" />
+
+<view class='main_top_box'>
+  <image class='main_top_img' src='/images/head.png'></image>
+  <text class='main_top_txt'>紫色千娇</text>
+  <text class='main_top_right'>当月消费积分：</text>
+</view>
+
+<view class="search" >
+
+  <view class="search-title {{func.checkEmptyObject(web_searchChange)?'active':''}}" bindtap='changeSearch' data-key='clear' >
+    消费记录
+  </view>
+  <view class="search-title {{web_searchChange.order_type=='system'?'active':''}}"  bindtap='changeSearch' data-key='order_type' data-value="system" >
+    调整记录
+  </view>
+  <view class="search-title {{web_searchChange.ischeck=='true'?'active':''}}" bindtap='changeSearch' data-key='ischeck' data-value="true" >
+    核销记录
+  </view>
+
+</view>
+
+
+<view class='income_list' >
+<block wx:for="{{web_mainData}}" wx:key="id">
+  <view class='income_list_li'>
+    <text class='income_list_txt1'>{{item.trade_info}}</text>
+    <text class='income_list_txt2'>{{item.scoreAmount}}</text>
+    <text class='income_list_txt3'>{{item.create_time}}</text>
+  </view>
+</block>
+</view>

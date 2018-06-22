@@ -1,0 +1,19 @@
+<!--pages/business_center/write_off/write_off.wxml-->
+<view class='main_top_box' style="height:132rpx">
+  <view  class='user_top_img' style="width:132rpx;height:132rpx;border-radius:50%;overflow:hidden;position:absolute;top:2%;left:5%">
+    <open-data  type="userAvatarUrl"></open-data>
+  </view>
+  <text class='main_top_txt' style="margin-left:164rpx">{{web_userName}}</text>
+  <text class='main_top_right'>积分：{{web_userscore}}</text>
+</view>
+<view class='income_title'>
+  <rich-text class='income_title_name'><text>核销记录</text><image src='/images/my_9.png'></image></rich-text>
+  <image class='income_title_go' src='/images/ic_return_2.png'></image>
+</view>
+<view class='income_list'>
+  <view class='income_list_li'>
+    <text class='income_list_txt1'>{{item.puser.username}}</text>
+    <text class='income_list_txt2'>{{item.scoreAmount}}</text>
+    <text class='income_list_txt3'>{{item.create_time}}</text>
+  </view>
+</view>

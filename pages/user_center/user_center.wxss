@@ -1,0 +1,72 @@
+/* pages/user_center/user_center.wxss */
+.user_main_top{
+  width: 100%;
+  text-align: center;
+  margin: 20rpx auto;
+  position:relative;
+  height:220rpx
+}
+.user_top_img{
+  width: 140rpx;
+  height: 140rpx;
+  margin-bottom: 20rpx;
+}
+.user_top_text{
+  font-size: 36rpx;
+  color: #101010;
+}
+.user_main_small{
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #bbb;
+  border-bottom: 2rpx #ebebeb solid;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.user_small_left{
+  border-right: 2rpx #bbb solid;
+  box-sizing: border-box;
+}
+.user_small_left,.user_small_right{
+  flex: 1;
+}
+.user_class_list{
+  margin: 30rpx auto 0; 
+}
+.user_class_li{
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  font-size: 28rpx;
+  color: #101010;
+  margin-top: 10rpx;
+  border-bottom: 2rpx #e5e5e5 solid;
+  box-sizing: border-box;
+  padding: 30rpx 0;
+}
+.user_class_list .user_class_li:nth-child(3n-1){
+  border-left: 2rpx #e5e5e5 solid;
+  border-right: 2rpx #e5e5e5 solid;
+}
+.user_class_list .user_class_li:nth-child(7),.user_class_list .user_class_li:nth-child(8){
+  border-bottom: 0;
+}
+.user_class_img{
+  width: 44rpx;
+  height: 44rpx;
+}
+.exit_login{
+  border:1px solid #FF9800;
+  width:60px;height:20px;
+  color:#FF9800;
+  text-align:center;
+  line-height:20px;
+  border-radius:6px;
+  font-size:12px;
+  position:absolute;
+  right:20px;
+
+}

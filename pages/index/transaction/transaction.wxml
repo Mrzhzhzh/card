@@ -1,0 +1,9 @@
+<!--pages/index/transaction.wxml-->
+
+<view style="font-size:18px;color:#808080;width:100%;text-align:center;margin:50px auto;">向商户支付</view>
+
+<view class='pay_box'>
+  
+  <view class='pay_txt'><image class='pay_img' src='/images/.png'></image><input type='pay' placeholder='与商户确认支付积分'  ></input></view>
+</view>
+<button type='submit' class='submit'>确认支付</button>

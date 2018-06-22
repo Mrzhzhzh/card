@@ -1,0 +1,5 @@
+<!--pages/user_center/scan/scan.wxml-->
+<view class='scan_box'>
+  
+  <rich-text class='scan_title'>扫用户二维码进行核销</rich-text>
+</view>

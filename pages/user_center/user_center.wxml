@@ -1,0 +1,43 @@
+<!--pages/user_center/user_center.wxml-->
+<view class='user_main_top'>
+  <view class='exit_login' bindtap='removeStorageSync'>退出登录</view>
+  <view  class='user_top_img' style="width:140rpx;height:140rpx;border-radius:50%;overflow:hidden;position:absolute;top:0%;left:41%">
+    <open-data  type="userAvatarUrl"></open-data>
+  </view>
+  <view style="width:100%;height:140rpx;position:absolute;top:80%;text-align:center;">
+     <span><open-data  type="userNickName" ></open-data></span>
+  </view>
+</view>
+<view class='user_main_small' >
+  <rich-text class='user_small_left'>会员：{{web_menuData.name}}</rich-text>
+  <rich-text class='user_small_right'>剩余积分：{{web_userInfo.user_score}}</rich-text>
+</view>
+
+<view class='user_class_list'>
+  <view class='user_class_li' data-path='/pages/user_center/qr_code/qr_code?qr_code={{web_userInfo.passage2.url}}'  bindtap='intoPath'>
+    <image class='user_class_img' src='/images/my_1.png'></image>
+    <rich-text class='user_class_img'>我的二维码</rich-text>
+  </view>
+  <view class='user_class_li' data-path='/pages/user_center/scan/scan'  bindtap='intoPath' bindtap='scanCode'>
+    <image class='user_class_img' src='/images/my_2.png'></image>
+    <rich-text class='user_class_img'>扫一扫</rich-text>
+  </view>
+  <view class='user_class_li' data-path='/pages/user_center/my_points/my_points'  bindtap='intoPath'>
+    <image class='user_class_img' src='/images/my_3.png'></image>
+    <rich-text class='user_class_img'>我的积分</rich-text>
+  </view>
+
+  <view class='user_class_li' data-path='/pages/user_center/information/information'  bindtap='intoPath'>
+    <image class='user_class_img' src='/images/my_5.png'></image>
+    <rich-text class='user_class_img'>会员信息</rich-text>
+  </view>
+  
+  <view class='user_class_li' data-path='/pages/user_center/aboutus/aboutus'  bindtap='intoPath'>
+    <image class='user_class_img' src='/images/my_7.png'></image>
+    <rich-text class='user_class_img'>关于我们</rich-text>
+  </view>
+  <view class='user_class_li' data-path='/pages/user_center/feedback/feedback'  bindtap='intoPath'>
+    <image class='user_class_img' src='/images/my_8.png'></image>
+    <rich-text class='user_class_img'>意见反馈</rich-text>
+  </view>
+</view>

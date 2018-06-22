@@ -1,0 +1,87 @@
+/* pages/business_center/business_center.wxss */
+.center_main{
+  padding: 0 30rpx;
+  border-bottom: 10rpx #f2f2f2 solid;
+}
+.center_img{
+  width: 100%;
+  height: 350rpx;
+}
+.center_name{
+  font-size: 40rpx;
+  color: #101010;
+  text-align: center;
+  padding: 20rpx 0;
+  display: block;
+}
+.center_list{
+  padding: 0 30rpx;
+}
+.center_list_li{
+  width: 100%;
+  border-bottom: 2rpx #f2f2f2 solid;
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+}
+.center_icon{
+  width: 100rpx;
+  height: 100rpx;
+  background: #FA9D26;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+}
+.center_icon{
+  width: 100rpx;
+  height: 100rpx;
+}
+.center_list_name{
+  font-size: 36rpx;
+  color: #101010;
+  flex: 2;
+  margin-left: 20rpx;
+}
+.center_list_go{
+  font-size: 28rpx;
+  color: #aaa;
+}
+.center_list_go text{
+  margin-right: 10rpx;
+  display: inline-block;
+  position: relative;
+  top: -10rpx;
+}
+.center_list_go image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.user_main_top{
+  width: 100%;
+  text-align: center;
+  margin: 20rpx auto;
+  position:relative;
+  height:220rpx
+}
+.user_top_img{
+  width: 140rpx;
+  height: 140rpx;
+  margin-bottom: 20rpx;
+}
+.user_top_text{
+  font-size: 36rpx;
+  color: #101010;
+}
+
+.exit_login{
+  border:1px solid #FF9800;
+  width:60px;height:20px;
+  color:#FF9800;
+  text-align:center;
+  line-height:20px;
+  border-radius:6px;
+  font-size:12px;
+  position:absolute;
+  right:20px;
+
+}

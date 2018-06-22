@@ -1,0 +1,48 @@
+/* pages/user_center/message/message.wxss */
+.mess_top_box{
+  display: flex;
+  align-items: center;
+  line-height: 100rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.mess_name{
+  flex: 1;
+  font-size: 32rpx;
+  color: #101010;
+}
+.mess_text{
+  flex: 1;
+  font-size: 36rpx;
+  color: #FF9D00;
+}
+.mess_jilu{
+  text-align: center;
+  font-size: 28rpx;
+  color: #444;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #f8f8f8;
+}
+.mess_list{
+  height: 140rpx;
+  line-height: 140rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #101010;
+  padding: 0 30rpx;
+}
+.mess_list:active,.active{
+  color: #fff;
+  background: #FF9D00;
+}
+.mess_list_txt{
+  flex: 2;
+}
+.mess_list_num{
+  flex: 1;
+  text-align: right;
+}
+
+

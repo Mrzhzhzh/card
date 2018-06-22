@@ -1,0 +1,36 @@
+/* pages/index/transaction.wxss */
+.pay_box{
+  border-top: 2rpx #e2e2e2 solid;
+  margin-bottom: 200rpx;
+}
+.pay_txt{
+  height: 120rpx;
+  line-height: 120rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  border-bottom: 2rpx #e2e2e2 solid;
+}
+.pay_img{
+  width: 20rpx;
+  height: 20rpx;
+}
+.pay_txt input{
+  height: 120rpx;
+  line-height: 120rpx;
+  color: #101010;
+  font-size: 28rpx;
+  display: block;
+}
+.submit{
+  width: 600rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #fff;
+  background: #FF9800;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  display: block;
+}

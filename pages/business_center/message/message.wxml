@@ -1,0 +1,26 @@
+<!--pages/business_center/message/message.wxml-->
+<view class='main_top_box'>
+  <image class='main_top_img' src='/images/head.png'></image>
+  <text class='main_top_txt'>紫色千娇</text>
+  <text class='main_top_right'>总积分：50</text>
+</view>
+
+<view class='jifen'>积分记录</view>
+
+<view class='income_list income_list1'>
+  <view class='income_list_li'>
+    <text class='income_list_txt1'>商家</text>
+    <text class='income_list_txt2'>20</text>
+    <text class='income_list_txt3'>2018-4-20</text>
+  </view>
+  <view class='income_list_li'>
+    <text class='income_list_txt1'>商家</text>
+    <text class='income_list_txt2'>20</text>
+    <text class='income_list_txt3'>2018-4-20</text>
+  </view>
+  <view class='income_list_li'>
+    <text class='income_list_txt1'>商家</text>
+    <text class='income_list_txt2'>20</text>
+    <text class='income_list_txt3'>2018-4-20</text>
+  </view>
+</view>

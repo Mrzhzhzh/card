@@ -1,0 +1,73 @@
+/**index.wxss**/
+.main{
+  margin: 0 auto;
+  width: 100%;
+}
+.top_banner{
+  width: 680rpx;
+  height: 350rpx;
+  margin: 0 auto;
+  display: block;
+}
+.main_menu{
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 2rpx #EBEBEB solid;
+  display: flex;
+  align-items: center;
+}
+.menu_tab{
+  flex: 1;
+  font-size: 28rpx;
+  color: #FF9800;
+  line-height: 70rpx;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 2rpx auto;
+}
+.menu_down{
+  width: 27rpx;
+  height: 14rpx;
+}
+
+.main_box{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.main_list{
+  width: 50%;
+  padding: 0 30rpx;
+  border-bottom: 10rpx #f2f2f2 solid;
+  margin: 30rpx 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+.main_box .main_list:nth-child(odd){
+  border-right:2rpx #f2f2f2 solid;
+}
+.store_img{
+  width: 100%;
+  height: 320rpx;
+}
+.text_name{
+  font-size: 36rpx;
+  color: #000;
+  text-align: center;
+}
+.text_address{
+  border-bottom: 2rpx #f2f2f2 solid;
+  font-size: 24rpx;
+  color: #949494;
+  display: block;
+  padding: 10rpx 0;
+}
+.text_add_qu{
+  color: #101010;
+}
+.text_class{
+  font-size: 28rpx;
+  color: #FF9800;
+  text-align: center;
+  line-height: 2;
+}

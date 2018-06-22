@@ -1,0 +1,9 @@
+<!--pages/user_center/aboutus/aboutus.wxml-->
+<view class='about_main'>
+  <image class='about_img' src='{{web_mainData.img[0].url}}'></image>
+  <rich-text class='about_title'>{{web_mainData.title}}</rich-text>
+  <rich-text class='about_text'>
+    <import src="../../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+   </rich-text>
+</view>

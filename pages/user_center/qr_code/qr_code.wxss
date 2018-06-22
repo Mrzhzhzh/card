@@ -1,0 +1,40 @@
+/* pages/user_center/qr_code/qr_code.wxss */
+
+.main_code{
+  width: 90%;
+  padding: 30rpx 0;
+  border-radius: 12rpx;
+  background: #FFD100;
+  text-align: center;
+  margin: 0 auto;
+}
+.head_img{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  display: block;
+}
+.main_name{
+  font-size: 40rpx;
+  color: #000;
+  margin: 20rpx auto;
+}
+.code_name{
+  font-size: 32rpx;
+  color: #000;
+}
+.codes{
+  width: 100%;
+  margin: 50rpx auto 0;
+  height: 514rpx;
+  background: #ccc;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.codes_img{
+  width:460rpx;
+  height:400rpx
+ 
+
+}

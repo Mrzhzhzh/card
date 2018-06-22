@@ -1,0 +1,39 @@
+/* pages/user_center/my_points/my_points.wxss */
+.income_list_li{
+  border-bottom: 2rpx #e5e5e5 solid;
+}
+.income_list_title{
+  background: #e5e5e5;
+  font-size: 28rpx;
+  color: #101010;
+  padding: 0 30rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+}
+.income_list_title_right{
+  float: right;
+}
+
+
+.search{
+	display:flex;
+	height:80rpx;
+	line-height:80rpx;
+	background-color:#E5E5E5;
+}
+
+
+.search-title{
+	flex:1;
+	text-align:center;
+	font-size:16px;
+}
+
+.active{
+	color:#FF9D00;
+	border-bottom:1px solid #FF9D00;
+}
+
+
+
+

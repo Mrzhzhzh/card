@@ -1,0 +1,18 @@
+<!--pages/user_center/message/message.wxml-->
+<view class='mess_top_box'>
+  <text class='mess_name'>紫色千娇</text>
+  <text class='mess_text'>总积分：50</text>
+</view>
+<rich-text class='mess_jilu'>积分记录</rich-text>
+<view class='mess_list active'>
+  <text class='mess_list_txt'>扫二维码</text>
+  <text class='mess_list_num'>+40</text>
+</view>
+<view class='mess_list'>
+  <text class='mess_list_txt'>二维码成功</text>
+  <text class='mess_list_num'>-20</text>
+</view>
+<view class='mess_list'>
+  <text class='mess_list_txt'>商家扫二维码失败</text>
+  <text class='mess_list_num'>-40</text>
+</view>

@@ -1,0 +1,10 @@
+<!--pages/user_center/qr_code/qr_code.wxml-->
+<view class='main_code' style="height:220rpx;position:relative">
+  <view  class='user_top_img' style="width:140rpx;height:140rpx;border-radius:50%;overflow:hidden;position:absolute;top:10%;left:40%">
+    <open-data  type="userAvatarUrl"></open-data>
+  </view>
+  <view style="width:100%;height:140rpx;position:absolute;top:70%;text-align:center;">
+     <span><open-data  type="userNickName" ></open-data></span>
+  </view>
+</view>
+<view class='codes'><image class='codes_img' src='{{code}}'></image></view>

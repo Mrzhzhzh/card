@@ -1,0 +1,8 @@
+<!--pages/user_center/my_card/my_card.wxml-->
+<view class='card_main'>
+  <image src='/images/vip_banner.png' class='card_img'></image>
+  <view class='card_text'>
+    <text class='card_text_name'>会员名称：文先生</text>
+    <text class='card_text_fen'>积分：265</text>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<!--pages/user_center/information/information.wxml-->
+<view class='infor_main'>
+  <image src='{{web_mainData.img[0].url}}' class='infor_img'></image>
+  <view class='infor_text'>
+    <import src="../../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+  </view>
+</view>
+

@@ -1,0 +1,9 @@
+<!--pages/user_center/login/login.wxml-->
+<view class='login_box'>
+  <view class="backindex" style="border:1px solid #FF9800;width:60px;height:20px;color:#FF9800; text-align:center;line-height:20px;border-radius:6px;font-size:12px;position:absolute;right:10px;top:20px" data-path="/pages/index/index"  bindtap='intoPath'>返回首页</view>
+  <rich-text class='login_title'>welcome</rich-text>
+  <input type='text' class='login_input' placeholder='请输入您的账号' data-key="username" bindchange="bindInputChange" ></input>
+  <input type='number' class='login_input' placeholder='请输入您的用户密码' data-key="password" bindchange="bindInputChange" ></input>
+  <button type='submit' class='login_submit' bindtap="check" >登录</button>
+  
+</view>

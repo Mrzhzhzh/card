@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="main">
+  <image src='/images/vip_banner.png' class='top_banner' data-path="/pages/index/transaction/transaction"  bindtap='intoPath'></image>
+  <view class='main_menu'>
+    <view class='menu_tab' style='border-right:2rpx #ebebeb solid;'>
+      <picker data-type="area_id" data-index="1" bindchange="pickerChange"  range="{{web_menuData[1].child}}" range-key="name" >
+        <view class="picker">
+          区域：
+          {{web_menuData[1]['child'][area_id].name}}
+          <image class='menu_down' src='/images/ic_goods_return.png'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='menu_tab'>
+      <picker data-type="menu_id" data-index="0" bindchange="pickerChange"  range="{{web_menuData[0].child}}" 
+      range-key="name" >
+        <view class="picker">
+          分类:
+          {{web_menuData[0]['child'][menu_id].name}}
+          <image class='menu_down' src='/images/ic_goods_return.png'></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<view class='main_box' style="flex-wrap: wrap;">
+
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class='main_list' data-path="/pages/index/cat/cat?id={{item.id}}"  bindtap='intoPath'>
+      <image src="{{item.img[0].url}}" class='store_img'></image>
+      <rich-text class='text_name'>{{item.title}}</rich-text>
+      <rich-text class='text_address'>
+        <text class='text_add_qu'>地址：{{item.description}}</text>
+        
+      </rich-text>
+      <rich-text class='text_class'>门店类别:{{item.menu.name}}</rich-text>
+    </view>
+  </block>
+  
+  
+</view>

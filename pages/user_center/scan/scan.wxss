@@ -1,0 +1,7 @@
+/* pages/user_center/scan/scan.wxss */
+.scan_title{
+  font-size: 28rpx;
+  color: #444;
+  text-align: center;
+  margin: 50rpx auto;
+}

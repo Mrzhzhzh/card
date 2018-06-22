@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/cat/cat",
+    "pages/index/transaction/transaction",
+    "pages/logs/logs",
+    "pages/user_center/user_center",
+    "pages/business_center/business_center",
+    "pages/business_center/login/login",
+    "pages/business_center/modify_password/modify_password",
+    "pages/business_center/write_off/write_off",
+    "pages/business_center/income/income",
+    "pages/business_center/qr_code/qr_code",
+    "pages/business_center/scan/scan",
+    "pages/business_center/message/message",
+    "pages/user_center/login/login",
+    "pages/user_center/qr_code/qr_code",
+    "pages/user_center/scan/scan",
+    "pages/user_center/my_points/my_points",
+    "pages/user_center/my_card/my_card",
+    "pages/user_center/information/information",
+    "pages/user_center/aboutus/aboutus",
+    "pages/user_center/feedback/feedback",
+    "pages/user_center/message/message",
+    "pages/user_center/revise_phone/revise_phone"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "W资产管理公司",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#FF9800",
+    "list": [
+      {
+        "selectedIconPath": "images/tab_1_hover.png",
+        "iconPath": "images/tab_1.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/tab_2_hover.png",
+        "iconPath": "images/tab_2.png",
+        "pagePath": "pages/user_center/user_center",
+        "text": "用户中心"
+      },
+      {
+        "selectedIconPath": "images/tab_3_hover.png",
+        "iconPath": "images/tab_3.png",
+        "pagePath": "pages/business_center/business_center",
+        "text": "商家中心"
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.clear{
+  clear: both;
+}
+
+/* card one--收入纪录 */
+.main_top_box{
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  margin: 20rpx auto;
+}
+.main_top_img{
+  width: 132rpx;
+  height: 132rpx;
+}
+.main_top_txt{
+  font-size: 32rpx;
+  color: #101010;
+  flex: 2;
+  margin-left: 20rpx;
+}
+.main_top_right{
+  font-size: 36rpx;
+  color: #FF9D00;
+}
+.income_title{
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #f7f7f7;
+}
+.income_title_name{
+  font-size: 32rpx;
+  color: #000;
+  flex: 2;
+}
+.income_title_name image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 15rpx;
+  vertical-align: text-top;
+}
+.income_title_go{
+  width: 40rpx;
+  height: 40rpx;
+}
+.income_list{
+  margin: 0 auto;
+}
+.income_list_li{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #101010;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+}
+.income_list_txt1{
+  flex: 2;
+}
+.income_list_txt2{
+  margin-right: 50rpx;
+}

@@ -1,0 +1,37 @@
+/* pages/business_center/login/login.wxss */
+.login_box{
+  width: 100%;
+  margin: 80rpx auto;
+}
+.login_title{
+  font-size: 80rpx;
+  color: #FA9D26;
+  text-align: center;
+  line-height: 2;
+}
+.login_input{
+  width: 570rpx;
+  background: 0;
+  font-size: 28rpx;
+  color: #101010;
+  padding-left: 30px;
+  border: 2rpx #FA9D26 solid;
+  box-sizing: border-box;
+  margin: 50rpx auto;
+  display: block;
+}
+.login_submit{
+  width: 600rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #fff;
+  background: #FF9800;
+  margin-top: 100rpx;
+}
+.login_input,.login_submit{
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+}
+
+
