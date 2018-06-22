@@ -1,5 +1,7 @@
 //app.js
 //
+//
+//hello zh!//
 import { Token } from 'utils/token.js';
 App({
   onLaunch: function () {
