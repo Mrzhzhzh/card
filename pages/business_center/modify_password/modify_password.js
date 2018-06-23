@@ -38,16 +38,6 @@ Page({
   },
 
 
-  removeStorageSync(){
-
-    const self = this;
-    wx.removeStorageSync('login');
-      if(!wx.removeStorageSync('login')){
-        api.pathTo('/pages/user_center/login/login','redi')
-      };
-
-  },
-
 
   passwordChange(){
     const self = this;
@@ -55,10 +45,15 @@ Page({
     postData.token = wx.getStorageSync('token');
     const callback = (res) => { 
       wx.hideLoading();
-      api.dealRes(res);
-       
-    }
-    api.passwordChange(postData,callback)
+      const pass = api.dealRes(res);
+      if(pass){
+        setTimeout(function(){
+          api.logOff();
+        },500);
+        
+      }
+    };
+    api.passwordChange(postData,callback);
   },
 
 

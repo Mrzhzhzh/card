@@ -37,6 +37,7 @@ Page({
     const self = this;
     if(!self.data.isLoadAll){
       self.data.paginate.currentPage++;
+
       self.getMainData();
     };
 
@@ -54,6 +55,10 @@ Page({
       area_id:'',
       menu_id:''
     });
+    self.data.searchItem = {
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      pmenu_id:1
+    },
     self.getMainData(true);
 
   },
@@ -146,6 +151,7 @@ Page({
   pickerChange(e){
 
     const self = this;
+    delete self.data.searchItem.pmenu_id;
     self.data.searchItem[api.getDataSet(e,'type')] = self.data.menuData[api.getDataSet(e,'index')]['child'][e.detail.value].id;
     self.getMainData(true);
     self.setData({

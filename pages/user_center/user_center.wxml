@@ -27,12 +27,12 @@
     <rich-text class='user_class_img'>我的积分</rich-text>
   </view>
 
-  <view class='user_class_li' data-path='/pages/user_center/information/information'  bindtap='intoPath'>
+  <view class='user_class_li' data-path="/pages/user_center/aboutus/aboutus?id={{web_userInfo.passage1}}&type=menu"  bindtap='intoPath'>
     <image class='user_class_img' src='/images/my_5.png'></image>
     <rich-text class='user_class_img'>会员信息</rich-text>
   </view>
   
-  <view class='user_class_li' data-path='/pages/user_center/aboutus/aboutus'  bindtap='intoPath'>
+  <view class='user_class_li' data-path="/pages/user_center/aboutus/aboutus?id=7&type=article" bindtap='intoPath'>
     <image class='user_class_img' src='/images/my_7.png'></image>
     <rich-text class='user_class_img'>关于我们</rich-text>
   </view>

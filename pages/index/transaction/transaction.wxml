@@ -1,9 +1,15 @@
 <!--pages/index/transaction.wxml-->
 
-<view style="font-size:18px;color:#808080;width:100%;text-align:center;margin:50px auto;">向商户支付</view>
+<view style="font-size:18px;color:#808080;width:100%;text-align:center;margin:50px auto;">
+名称:{{web_userInfo.username}}
+<view>{{web_userInfo.user_class=='merchant'?'向用户收款':'向商户支付'}}</view>
+
+</view>
 
 <view class='pay_box'>
-  
-  <view class='pay_txt'><image class='pay_img' src='/images/.png'></image><input type='pay' placeholder='与商户确认支付积分'  ></input></view>
+  <view class='pay_txt'><image class='pay_img' src='/images/.png'></image><input type='pay' placeholder='请确认支付积分' data-key="score" bindchange="fillChange" ></input></view>
 </view>
-<button type='submit' class='submit'>确认支付</button>
+
+
+
+<button type='submit' class='submit' bindtap="submit">确认支付</button>

@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -55,6 +55,13 @@
 					"name": "我的积分",
 					"pathName": "pages/user_center/my_points/my_points",
 					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "交易页面",
+					"pathName": "pages/index/transaction/transaction",
+					"query": "scene=2",
+					"scene": "1047"
 				}
 			]
 		}

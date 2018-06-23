@@ -626,6 +626,42 @@ class Api extends Base{
         this.request(allParams)
     }
 
+    scanUser(param,callback) {
+        var allParams = {
+            url:'User/ScanUser',
+            type:'post',
+            data:param,
+            sCallback: function(data){
+                callback&&callback(data);
+            }
+        };
+        this.request(allParams)
+    }
+
+    payCusomer(param,callback) {
+        var allParams = {
+            url:'UserFlowScore/PayCusomer',
+            type:'post',
+            data:param,
+            sCallback: function(data){
+                callback&&callback(data);
+            }
+        };
+        this.request(allParams)
+    }
+
+    chargeMerchant(param,callback) {
+        var allParams = {
+            url:'UserFlowScore/ChargeMerchant',
+            type:'post',
+            data:param,
+            sCallback: function(data){
+                callback&&callback(data);
+            }
+        };
+        this.request(allParams)
+    }
+
 
 
 

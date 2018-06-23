@@ -36,11 +36,7 @@ Page({
  
 
   removeStorageSync(){
-    const self = this;
-    wx.removeStorageSync('login');
-      if(!wx.removeStorageSync('login')){
-        api.pathTo('/pages/user_center/login/login','redi')
-      };
+    api.logOff();
   },
 
   scanCode(){ 

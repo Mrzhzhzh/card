@@ -12,23 +12,30 @@ Page({
 
    onLoad:function (options) {
     const self = this;
-    self.data.id = options.id;
+    console.log(options);
+    if(options.type=='article'){
+      self.data.id = options.id;
+      self.getMainData();
+    }else if(options.type=='menu'){
+      self.data.id = options.id;
+      self.getMenuData();
+    }else{
+      api.showToast('参数有误','fail')
+    }
     
-    self.getMainData();
-  
   },
 
   getMainData(){
     const self = this;
     const postData = {};
     postData.thirdapp_id = getApp().globalData.thirdapp_id;
-    postData.id = 7; 
-    const callback =(data)=>{
+    postData.id = self.data.id; 
+    const callback =(res)=>{
       wx.hideLoading();
-      console.log(data);
-      if(data){
-        self.data.mainData = data;
-        self.data.mainData.content = api.wxParseReturn(data.article_content.content).nodes;
+      console.log(res);
+      if(res){
+        self.data.mainData = res;
+        self.data.mainData.content = api.wxParseReturn(res.article_content.content).nodes;
         console.log(self.data.mainData)
         self.setData({
           web_mainData:self.data.mainData,
@@ -43,5 +50,36 @@ Page({
       }
     };
     api.articleOne(postData,callback);
-  }
+  },
+
+  getMenuData(){
+    const self = this;
+    const postData = {};
+    postData.thirdapp_id = getApp().globalData.thirdapp_id;
+    postData.menu_id = self.data.id; 
+    const callback =(res)=>{
+      wx.hideLoading();
+      console.log(res);
+      if(res){
+        self.data.mainData = res;
+        self.data.mainData.content = api.wxParseReturn(res.content).nodes;
+        self.data.mainData.img = res.banner;
+        self.data.mainData.title = res.name;
+        console.log(self.data.mainData)
+        self.setData({
+          web_mainData:self.data.mainData,
+        });
+      }else{
+        wx.showToast({
+          title:'该会员卡已被删除',
+          icon:'fail',
+          duration:1000,
+          mask:true
+        })
+      }
+    };
+    api.menuOne(postData,callback);
+  },
+
+
 })

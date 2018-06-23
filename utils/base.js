@@ -337,14 +337,24 @@ class Base extends Token{
 
 
     checkLogin(userType){
+        if(userType){
+            if(wx.getStorageSync('login')&&wx.getStorageSync('token')&&wx.getStorageSync('login').userType==userType){
+                return wx.getStorageSync('login');
+            }else{
 
-        if(wx.getStorageSync('login')&&wx.getStorageSync('token')&&wx.getStorageSync('login').userType==userType){
-            return wx.getStorageSync('login');
+                this.pathTo('/pages/user_center/login/login','redi');
+                return false;
+            };
         }else{
-
-            this.pathTo('/pages/user_center/login/login','redi');
-            return false;
+            if(wx.getStorageSync('login')&&wx.getStorageSync('token')){
+                return wx.getStorageSync('login');
+            }else{
+                this.pathTo('/pages/user_center/login/login','redi');
+                return false;
+            };
         };
+
+        
         wx.hideLoading();
 
     };
@@ -357,6 +367,19 @@ class Base extends Token{
         }
         return target;
         
+    };
+
+
+    logOff(){
+
+        const self = this;
+        wx.removeStorageSync('login');
+        if(!wx.removeStorageSync('login')){
+            self.pathTo('/pages/user_center/login/login','redi')
+        }else{
+            self.showToast('系统故障','fail')
+        }
+
     };
 
 
