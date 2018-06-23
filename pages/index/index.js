@@ -14,6 +14,10 @@ Page({
       pmenu_id:1
     },
     isLoadAll:false,
+    indicatorDots: true,
+        autoplay: true,
+        interval: 3000,
+        duration: 1000
 
   },
   
@@ -24,6 +28,7 @@ Page({
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMenuData();
     self.getMainData();
+    self.getSliderData();
 
   },
 
@@ -53,6 +58,8 @@ Page({
 
   },
 
+  
+
 
   getMenuData(){
 
@@ -76,6 +83,27 @@ Page({
     api.menuTree(postData,callback);
 
   },
+
+  getSliderData(){
+
+        const self = this;
+        const postData = {};
+        postData.thirdapp_id = getApp().globalData.thirdapp_id;
+        postData.searchItem = {
+          parentid:6
+        };
+        const callback = (res)=>{
+          console.log(res);
+          self.setData({
+            sliderData:res,
+          });
+          wx.hideLoading();
+        };
+        api.menuTree(postData,callback);
+
+    },
+
+
 
 
   getMainData(isNew){
