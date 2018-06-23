@@ -19,7 +19,7 @@
     <rich-text class='center_list_name'>商家二维码</rich-text>
     <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
   </view>
-  <view class='center_list_li' data-path='/pages/business_center/scan/scan'  bindtap='intoPath' bindtap='scanCode'>
+  <view class='center_list_li' bindtap='scanCode'>
     <image class='center_icon' src='/images/ic merchant_2.png'></image>
     <rich-text class='center_list_name'>扫一扫</rich-text>
     <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>

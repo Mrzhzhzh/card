@@ -18,11 +18,11 @@ Page({
     if(pass){
       
       self.getUserData();
-      var scene = decodeURIComponent(options.scene);
-      console.log(scene);
-      if(scene){
-        self.getUserDataById(scene);
-
+      
+      if(options.scene&&decodeURIComponent(options.scene)){
+        self.getUserDataById(decodeURIComponent(options.scene));
+      }else if(options.id){
+        self.getUserDataById(options.id);
       }else{
         const func = ()=>{
           setTimeout(function(){

@@ -18,7 +18,7 @@
     <image class='user_class_img' src='/images/my_1.png'></image>
     <rich-text class='user_class_img'>我的二维码</rich-text>
   </view>
-  <view class='user_class_li' data-path='/pages/user_center/scan/scan'  bindtap='intoPath' bindtap='scanCode'>
+  <view class='user_class_li'  bindtap='scanCode'>
     <image class='user_class_img' src='/images/my_2.png'></image>
     <rich-text class='user_class_img'>扫一扫</rich-text>
   </view>
