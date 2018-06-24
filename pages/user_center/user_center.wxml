@@ -40,4 +40,9 @@
     <image class='user_class_img' src='/images/my_8.png'></image>
     <rich-text class='user_class_img'>意见反馈</rich-text>
   </view>
+
+  <view class='user_class_li' data-path='/pages/business_center/modify_password/modify_password'  bindtap='intoPath'>
+    <image class='user_class_img' src='/images/my_9.png'></image>
+    <rich-text class='user_class_img'>修改密码</rich-text>
+  </view>
 </view>

@@ -32,6 +32,16 @@ Page({
 
   },
 
+  onReachBottom() {
+
+    const self = this;
+    if(!self.data.isLoadAll){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+
+  },
+
   getMainData(isNew){
 
     const self = this;

@@ -5,13 +5,14 @@
   <view  class='user_top_img' style="width:140rpx;height:140rpx;border-radius:50%;overflow:hidden;position:absolute;top:0%;left:41%">
     <open-data  type="userAvatarUrl"></open-data>
   </view>
-  <view style="width:100%;height:140rpx;position:absolute;top:80%;text-align:center;">
-     <span><open-data  type="userNickName" ></open-data></span>
+  <view style="width:100%;height:40rpx;position:absolute;top:80%;text-align:center;display:flex">
+    <view style="font-size:14px;color:#101010;width:50%;border-right:1px solid #808080">昵称：<open-data  type="userNickName" ></open-data></view>
+     <view style="font-size:14px;color:#101010;width:50%">商户名称：{{web_userInfo.username}}</view>
   </view>
 </view>
 
 <view bindtap='on' class='center_main'>
-  <rich-text class='center_name'>{{web_userInfo.username}}</rich-text>
+  
 </view>
 <view class='center_list'>
   <view class='center_list_li' data-path='/pages/business_center/qr_code/qr_code?qr_code={{web_userInfo.passage2.url}}'  bindtap='intoPath'>

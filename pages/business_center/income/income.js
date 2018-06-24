@@ -32,7 +32,16 @@ Page({
       self.data.paginate = api.cloneForm(getApp().globalData.paginate);
       self.getMainData();
     };
-    
+
+  },
+
+  onReachBottom() {
+
+    const self = this;
+    if(!self.data.isLoadAll){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
 
   },
 
