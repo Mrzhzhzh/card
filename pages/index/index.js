@@ -36,14 +36,12 @@ Page({
     const self = this;
     if(!self.data.isLoadAll){
       self.data.paginate.currentPage++;
-
       self.getMainData();
     };
 
   },
 
-  onPullDownRefresh:function()
-  {
+  onPullDownRefresh:function(){
     const self = this;
     wx.showNavigationBarLoading(); //在标题栏中显示加载
     self.data.searchItem = {
