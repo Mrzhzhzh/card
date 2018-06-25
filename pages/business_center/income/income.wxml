@@ -12,10 +12,10 @@
 </view>
 <view class='income_list'>
   <block wx:for="{{web_mainData}}" wx:key="id">
-  <view class='income_list_li'>
-    <text class='income_list_txt1'>{{item.puser.username}}</text>
-    <text class='income_list_txt2'>{{item.scoreAmount}}</text>
-    <text class='income_list_txt3'>{{item.create_time}}</text>
-  </view>
-</block>
+    <view class='income_list_li'>
+      <text class='income_list_txt1'>{{item.puser.username}}</text>
+      <text class='income_list_txt2'>{{item.scoreAmount}}</text>
+      <text class='income_list_txt3'>{{item.create_time}}</text>
+    </view>
+  </block>
 </view>

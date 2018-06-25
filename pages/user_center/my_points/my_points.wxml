@@ -8,7 +8,7 @@
     <open-data  type="userAvatarUrl"></open-data>
   </view>
   <view class='main_top_txt' style="margin-left:164rpx"><span><open-data  type="userNickName" ></open-data></span></view>
-  <text class='main_top_right'>当月消费积分：</text>
+  
 </view>
 
 <view class="search" >

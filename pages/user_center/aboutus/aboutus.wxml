@@ -6,4 +6,9 @@
     <import src="../../../wxParse/wxParse.wxml"/>
     <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
    </rich-text>
+   <view class='about_text'>
+    <import src="../../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:web_mainData.description}}"/>
+   </view>
+
 </view>
