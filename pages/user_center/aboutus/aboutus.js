@@ -62,7 +62,7 @@ Page({
       console.log(res);
       if(res){
         self.data.mainData = res;
-        self.data.mainData.content = api.wxParseReturn(res.content).nodes;
+        self.data.mainData.content = api.wxParseReturn(res.description).nodes;
         self.data.mainData.img = res.banner;
         self.data.mainData.title = res.name;
         console.log(self.data.mainData)
