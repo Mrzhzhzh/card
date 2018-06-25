@@ -16,9 +16,15 @@ Page({
     if(options.type=='article'){
       self.data.id = options.id;
       self.getMainData();
+      wx.setNavigationBarTitle({
+        title: '文章'
+      })
     }else if(options.type=='menu'){
       self.data.id = options.id;
       self.getMenuData();
+      wx.setNavigationBarTitle({
+        title: '菜单'
+      })
     }else{
       api.showToast('参数有误','fail')
     }
