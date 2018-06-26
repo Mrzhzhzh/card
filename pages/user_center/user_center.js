@@ -22,8 +22,6 @@ Page({
   onShow(){
     const self = this;
     api.checkLogin('customer');
-    
-
     self.getUserData();
  
   },
@@ -34,11 +32,12 @@ Page({
 
   scanCode(){ 
     wx.scanCode({
-    onlyFromCamera: true,
-    success: (res) => {
-      api.pathTo(res.path,'nav');
-     }
-   })
+      onlyFromCamera: true,
+      success: (res) => {
+      console.log(res);
+        api.pathTo(res.path,'nav');
+      }
+    })
   },
 
   
@@ -49,7 +48,6 @@ Page({
     postData.token = wx.getStorageSync('token');
     
     const callback = (res)=>{
-       console.log(res);
       self.setData({
         web_userInfo:res,
       });
@@ -67,7 +65,6 @@ Page({
     postData.thirdapp_id = getApp().globalData.thirdapp_id;
     postData.menu_id = id;
     const callback = (res)=>{
-       console.log(res);
       self.setData({
         web_menuData:res,
      });
