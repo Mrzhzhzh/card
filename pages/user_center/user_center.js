@@ -31,11 +31,10 @@ Page({
   },
 
   scanCode(){ 
-    wx.scanCode({
-      onlyFromCamera: true,
+    wx.scanCode({ 
       success: (res) => {
-      console.log(res);
-        api.pathTo(res.path,'nav');
+        console.log(res)
+        api.pathTo(res.path,'nav')
       }
     })
   },
