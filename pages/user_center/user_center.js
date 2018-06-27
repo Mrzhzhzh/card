@@ -34,9 +34,8 @@ Page({
 
   scanCode(){ 
     wx.scanCode({
-    onlyFromCamera: true,
     success: (res) => {
-      api.pathTo(res.path,'nav');
+      api.pathTo(res.result,'nav');
      }
    })
   },

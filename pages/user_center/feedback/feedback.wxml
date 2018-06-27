@@ -3,6 +3,7 @@
   <rich-text class='feed_box_title'>请填写您的意见和建议?</rich-text>
   <textarea class='feed_content feed_content1' data-key="content" bindblur="changeBind"></textarea>
 </view>
+
 <view class='feed_box feed_box2'>
   <rich-text class='feed_box_title'>请填写您的联系方式</rich-text>
   <input type='number' class='feed_content feed_content2' data-key="phone" bindblur="changeBind"></input>

@@ -1,4 +1,5 @@
 import {Api} from '../../../utils/api.js';
+
 const api = new Api();
 
 Page({
@@ -16,6 +17,7 @@ Page({
 
   onLoad: function (options) {
     const self = this;
+
     self.setData({
       web_userName:options.username
     })
@@ -57,11 +59,8 @@ Page({
         score:res.score
       });
       if(res.data.length>0){
-        self.data.mainData.push.apply(self.data.mainData,res.data);
-        
-        
+        self.data.mainData.push.apply(self.data.mainData,res.data);    
       }else{
-
         wx.showToast({
           title:'没有更多了',
           icon:'fail',
