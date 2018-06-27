@@ -7,7 +7,7 @@
   <text class='main_top_right'>积分：{{web_userscore}}</text>
 </view>
 <view class='income_title'>
-  <rich-text class='income_title_name'><text>核销记录</text><image src='/images/my_9.png'></image></rich-text>
+  <rich-text class='income_title_name'><text>核销记录</text><image src='/images/my_9.png' bindtap='getNowTime'></image></rich-text>
  
 </view>
 <view class='income_list'>

@@ -42,9 +42,12 @@ Page({
 
   scanCode(){ 
     wx.scanCode({
-      success: (res) => {
-        console.log(res)
-      api.pathTo(res.result,'nav');
+    success: (res) => {
+      var surl = '/'+res.path;
+      console.log(surl)
+      wx.navigateTo({
+        url:surl
+      })
      }
    })
   },

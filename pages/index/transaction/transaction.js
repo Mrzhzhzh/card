@@ -96,7 +96,9 @@ Page({
     const callback = (res)=>{
       const pass = api.dealRes(res);
       if(pass){
-        api.pathTo('/pages/index/index','tab');
+        setTimeout(function(){
+           api.pathTo('/pages/index/index','tab');
+        },800)
       }
     };
     api[funcName](postData,callback);
