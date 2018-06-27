@@ -39,6 +39,7 @@ Page({
     api.logOff();
   },
 
+
   scanCode(){ 
     wx.scanCode({
       success: (res) => {
