@@ -22,8 +22,6 @@ Page({
   onShow(){
     const self = this;
     api.checkLogin('customer');
-    
-
     self.getUserData();
  
   },
@@ -33,11 +31,20 @@ Page({
   },
 
   scanCode(){ 
+<<<<<<< HEAD
     wx.scanCode({
     success: (res) => {
       api.pathTo(res.result,'nav');
      }
    })
+=======
+    wx.scanCode({ 
+      success: (res) => {
+        console.log(res)
+        api.pathTo(res.path,'nav')
+      }
+    })
+>>>>>>> 908405de1d3267a5477cdf001f62269cde4aec56
   },
 
   
@@ -48,7 +55,6 @@ Page({
     postData.token = wx.getStorageSync('token');
     
     const callback = (res)=>{
-       console.log(res);
       self.setData({
         web_userInfo:res,
       });
@@ -66,7 +72,6 @@ Page({
     postData.thirdapp_id = getApp().globalData.thirdapp_id;
     postData.menu_id = id;
     const callback = (res)=>{
-       console.log(res);
       self.setData({
         web_menuData:res,
      });
