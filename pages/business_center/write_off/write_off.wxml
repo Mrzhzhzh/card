@@ -3,7 +3,7 @@
   <view  class='user_top_img' style="width:132rpx;height:132rpx;border-radius:50%;overflow:hidden;">
     <open-data  type="userAvatarUrl"></open-data>
   </view>
-  <text class='main_top_txt' style="margin-left:164rpx">积分：{{web_userscore}}</text>
+  <text class='main_top_txt' >积分：{{web_userscore}}</text>
   
   <view class='user_form' style="position:relative;">
     <picker style="width:100%" mode="date" value="{{start_time}}" start="1900-09-01" end="2050-09-01" data-key="start_time" bindchange="changeBind">
