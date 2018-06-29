@@ -19,6 +19,19 @@ Page({
 
   },
 
+  onPullDownRefresh:function(){
+    const self = this;
+    wx.showNavigationBarLoading(); //在标题栏中显示加载
+    delete self.data.searchItem.start_time;
+    delete self.data.searchItem.end_time;
+    self.setData({
+      start_time:'',
+      end_time:'',
+    });
+    self.getMainData(true);
+
+  },
+
 
   onLoad: function (options) {
 
@@ -50,6 +63,9 @@ Page({
     const self = this;
     if(isNew){
       api.clearPageIndex(self);
+      self.setData({
+        web_mainData:self.data.mainData
+      })
     };
     const postData = self.data.paginate;
     postData.token = wx.getStorageSync('token');
@@ -65,7 +81,7 @@ Page({
         
         
       }else{
-
+        self.data.isLoadAll = true;
         wx.showToast({
           title:'没有更多了',
           icon:'fail',
@@ -75,6 +91,8 @@ Page({
 
       };
       wx.hideLoading();
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -98,6 +116,18 @@ Page({
     });
     self.getMainData(true);
 
+  },
+
+
+  changeBind(e){
+    const self = this;
+    const key = api.getDataSet(e,'key');
+    self.setData({
+      [key]:e.detail.value,
+    });
+    self.data.searchItem[key] = api.timeToTimestamp(e.detail.value);
+    self.getMainData(true);
+    console.log(self.data.searchItem)
   },
 
   

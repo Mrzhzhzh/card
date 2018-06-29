@@ -10,7 +10,8 @@ Page({
     sForm:{
       username:'',
       password:''
-    }
+    },
+    web_show:false
   },
 
 
@@ -21,7 +22,11 @@ Page({
 
   onShow(){
     const self = this;
+    wx.showLoading();
     api.checkLogin('customer');
+    self.setData({
+      web_show:true
+    })
     self.getUserData();
  
   },

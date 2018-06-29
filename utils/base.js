@@ -287,7 +287,7 @@ class Base extends Token{
         })
     };
 
-    pathTo(path,type){
+    pathTo(path,type,callback){
 
         if(type=='nav'){
             wx.navigateTo({
@@ -295,7 +295,8 @@ class Base extends Token{
             });
         }else if(type=='tab'){
             wx.switchTab({
-                url:path
+                url:path,
+                
             });
         }else if(type=='redi'){
             wx.redirectTo({
@@ -381,6 +382,15 @@ class Base extends Token{
         }
 
     };
+
+
+    timeToTimestamp(format){
+    
+        var mydata=format.replace('-', '/'); 
+        mydata=mydata.replace('-', '/'); 
+        return new Date(mydata)/1000;
+        
+    }
 
 
 

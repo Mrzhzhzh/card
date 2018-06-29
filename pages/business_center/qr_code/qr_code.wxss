@@ -3,9 +3,10 @@
   width: 90%;
   padding: 30rpx 0;
   border-radius: 12rpx;
-  background: #FA9D26;
+  
   text-align: center;
   margin: 0 auto;
+  border:1px solid #E5E5E5;
 }
 .head_img{
   width: 200rpx;

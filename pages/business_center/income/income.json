@@ -1,4 +1,6 @@
 {
   "navigationBarBackgroundColor": "#f8f8f8",
-  "navigationBarTitleText": "收入记录"
+  "navigationBarTitleText": "收入记录",
+  "enablePullDownRefresh": true,
+	"backgroundColor":"#E5E5E5"
 }

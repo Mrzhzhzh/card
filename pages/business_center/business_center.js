@@ -10,19 +10,24 @@ Page({
     sForm:{
       username:'',
       password:''
-    }
+    },
+    web_show:false,
   
   },
     
 
   onLoad(){
-    
+    wx.showLoading();
 
   },
+
 
   onShow(){
     const self = this;
     api.checkLogin('merchant');
+    self.setData({
+      web_show:true
+    })
     self.getUserData()
   },
 

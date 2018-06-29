@@ -24,11 +24,19 @@ Page({
   onLoad(){
 
     const self = this;
+    wx.showLoading();
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMenuData();
     self.getMainData();
     self.getSliderData();
 
+  },
+
+  onTabItemTap(item) {
+    console.log(item.index)
+    console.log(item.pagePath)
+    console.log(item.text)
+    api.showToast('nb','fail')
   },
 
   onReachBottom() {

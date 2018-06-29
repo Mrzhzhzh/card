@@ -4,10 +4,31 @@
 
 
 <view class='main_top_box' style="height:132rpx">
-  <view  class='user_top_img' style="width:132rpx;height:132rpx;border-radius:50%;overflow:hidden;position:absolute;top:2%;left:5%">
+  <view  class='user_top_img' style="width:132rpx;height:132rpx;border-radius:50%;overflow:hidden;">
     <open-data  type="userAvatarUrl"></open-data>
   </view>
   <view class='main_top_txt' style="margin-left:164rpx"><span><open-data  type="userNickName" ></open-data></span></view>
+
+
+  <view class='user_form' style="position:relative;">
+    <picker style="width:100%" mode="date" value="{{start_time}}" start="1900-09-01" end="2050-09-01" data-key="start_time" bindchange="changeBind">
+      <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;display:flex;align-items:center">
+          <view style="margin-left:10rpx;">
+            {{start_time}}
+          </view>
+          <view class='user_text' >开始日期</view>
+      </view>
+    </picker>
+
+    <picker style="width:100%" mode="date" value="{{end_time}}" start="1900-09-01" end="2050-09-01" data-key="end_time" bindchange="changeBind">
+      <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;display:flex;align-items:center">
+          <view style="margin-left:10rpx;">
+            {{end_time}}
+          </view>
+          <view class='user_text' >截止日期</view>
+      </view>
+    </picker>
+  </view>
   
 </view>
 

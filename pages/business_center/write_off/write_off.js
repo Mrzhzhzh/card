@@ -15,9 +15,22 @@ Page({
     },
   },
 
+  onPullDownRefresh:function(){
+    const self = this;
+    wx.showNavigationBarLoading(); //在标题栏中显示加载
+    delete self.data.searchItem.start_time;
+    delete self.data.searchItem.end_time;
+    self.setData({
+      start_time:'',
+      end_time:'',
+    });
+    self.getMainData(true);
+
+  },
+
   onLoad: function (options) {
     const self = this;
-    self.getNowTime();
+    
     self.setData({
       web_userName:options.username
     })
@@ -70,12 +83,26 @@ Page({
 
       };
       wx.hideLoading();
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
       self.setData({
         web_mainData:self.data.mainData,
       });
     };
     api.scoreList(postData,callback);
 
+  },
+
+
+  changeBind(e){
+    const self = this;
+    const key = api.getDataSet(e,'key');
+    self.setData({
+      [key]:e.detail.value,
+    });
+    self.data.searchItem[key] = api.timeToTimestamp(e.detail.value);
+    self.getMainData(true);
+    console.log(self.data.searchItem)
   },
 
 
