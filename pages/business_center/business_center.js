@@ -24,10 +24,12 @@ Page({
 
   onShow(){
     const self = this;
-    api.checkLogin('merchant');
-    self.setData({
-      web_show:true
-    })
+    const pass = api.checkLogin('merchant');
+    if(pass){
+      self.setData({
+        web_show:true
+      })
+    };
     self.getUserData()
   },
 

@@ -23,10 +23,13 @@ Page({
   onShow(){
     const self = this;
     wx.showLoading();
-    api.checkLogin('customer');
-    self.setData({
-      web_show:true
-    })
+    const pass = api.checkLogin('customer');
+    if(pass){
+      self.setData({
+        web_show:true
+      })
+    };
+    
     self.getUserData();
  
   },

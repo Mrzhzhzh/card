@@ -4,7 +4,7 @@
   width: 90%;
   padding: 30rpx 0;
   border-radius: 12rpx;
-  background: #FFD100;
+  border:1px solid #E5E5E5;
   text-align: center;
   margin: 0 auto;
 }

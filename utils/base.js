@@ -338,19 +338,25 @@ class Base extends Token{
 
 
     checkLogin(userType){
+        const self = this;
         if(userType){
             if(wx.getStorageSync('login')&&wx.getStorageSync('token')&&wx.getStorageSync('login').userType==userType){
                 return wx.getStorageSync('login');
             }else{
-
-                this.pathTo('/pages/user_center/login/login','redi');
+                setTimeout(function(){
+                    self.pathTo('/pages/user_center/login/login','redi');
+                },500);
+                
                 return false;
             };
         }else{
             if(wx.getStorageSync('login')&&wx.getStorageSync('token')){
                 return wx.getStorageSync('login');
             }else{
-                this.pathTo('/pages/user_center/login/login','redi');
+                setTimeout(function(){
+                   self.pathTo('/pages/user_center/login/login','redi'); 
+                },500);
+                
                 return false;
             };
         };
