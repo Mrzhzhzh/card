@@ -59,7 +59,6 @@ Page({
 
 
   getMainData(isNew){
-
     const self = this;
     if(isNew){
       api.clearPageIndex(self);
@@ -73,13 +72,13 @@ Page({
     postData.searchItem = api.extend(postData.searchItem,self.data.searchChange)
     const callback = (res)=>{
       console.log(res);
+    
       self.setData({ 
-        score:res.user_score
+        score:res.user_score,
+        web_total_score:res.total_score
       });
       if(res.data.length>0){
-        self.data.mainData.push.apply(self.data.mainData,res.data);
-        
-        
+        self.data.mainData.push.apply(self.data.mainData,res.data); 
       }else{
         self.data.isLoadAll = true;
         wx.showToast({
@@ -93,6 +92,8 @@ Page({
       wx.hideLoading();
       wx.stopPullDownRefresh();
       wx.hideNavigationBarLoading();
+      
+      console.log(self.data.mainData)
       self.setData({
         web_mainData:self.data.mainData,
       });
@@ -102,7 +103,6 @@ Page({
   },
 
   changeSearch(e){
-
     const self = this;
     self.data.searchChange = {};
     const key = api.getDataSet(e,'key');

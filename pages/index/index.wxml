@@ -37,8 +37,7 @@
       <image src="{{item.img[0].url}}" class='store_img'></image>
       <rich-text class='text_name'>{{item.title}}</rich-text>
       <rich-text class='text_address'>
-        <text class='text_add_qu'>地址：{{item.description}}</text>
-        
+        <view class='text_add_qu' style="overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">地址：{{item.description}}</view>
       </rich-text>
       <rich-text class='text_class'>门店类别:{{item.menu.name}}</rich-text>
     </view>

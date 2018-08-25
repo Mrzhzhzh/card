@@ -1,20 +1,15 @@
+//logs.js
 import {Api} from '../../../utils/api.js';
 var api = new Api();
 
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    id:'',
+    mainData:[]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad:function (options) {
+
+ onLoad:function (options) {
     const self = this;
     self.data.id = options.id;
     
@@ -49,25 +44,17 @@ Page({
     api.articleOne(postData,callback);
   },
 
-  intoPath(e){
-    const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'nav');
-  },
 
-  calling() {
+  map(e) {
     const self = this;
-    var phone = self.data.mainData.contactPhone;
-    wx.makePhoneCall({
-        phoneNumber: phone,
-        success: function () {
-            console.log("拨打电话成功！")
-        },
-        fail: function () {
-            console.log("拨打电话失败！")
-        }
+    wx.openLocation({
+      latitude: parseFloat(self.data.mainData.latitude),
+      longitude: parseFloat(self.data.mainData.longitude),
+      height:100,
+      scale: 18,
+      name: self.data.mainData.title,
+      address:self.data.mainData.description
     })
-  }
-
-
+  },
 
 })

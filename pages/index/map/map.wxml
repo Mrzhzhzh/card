@@ -1,0 +1,4 @@
+<!--map.wxml-->
+<map id="map" longitude="{{web_mainData.longitude}}" latitude="{{web_mainData.latitude}}" markers="{{markers}}"
+scale="18"  style="width: 100%; height: 603px;" bindtap="map">
+</map>

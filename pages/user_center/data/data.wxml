@@ -1,0 +1,41 @@
+<!--pages/teacher/data.wxml-->
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">姓名</view>
+	<input style="font-size:15px;height:100rpx;line-height:100rpx;color:#999999;float:right;text-align:right" bindblur="changeBind" data-key="username" value="{{web_sForm.username}}" placeholder="请输入姓名" >{{web_sForm.username}}</input>
+</view>
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">电话</view>
+	<input style="font-size:15px;height:100rpx;line-height:100rpx;color:#999999;float:right;text-align:right" bindblur="changeBind" data-key="phone" value="{{web_sForm.phone}}" placeholder="请输入电话" >{{web_sForm.phone}}</input>
+</view>
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">身份证号</view>
+	<input style="font-size:15px;height:100rpx;line-height:100rpx;color:#999999;float:right;text-align:right" bindblur="changeBind" data-key="cardID" value="{{web_sForm.cardID}}" placeholder="请输入身份证号" >{{web_sForm.cardID}}</input>
+</view>
+
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">区域</view>
+	<input style="font-size:15px;height:100rpx;line-height:100rpx;color:#999999;float:right;text-align:right" bindblur="changeBind" data-key="area" value="{{web_sForm.area}}" placeholder="请输入区域" >{{web_sForm.area}}</input>
+</view>
+
+
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">备注</view>
+	<input style="font-size:15px;height:100rpx;line-height:100rpx;color:#999999;float:right;text-align:right" bindblur="changeBind" data-key="email" value="{{web_sForm.email}}" placeholder="请输入备注" >{{web_sForm.email}}</input>
+</view>
+
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">可用积分</view>
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:right">{{web_mainData.user_score}}</view>
+</view>
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">是否绑定微信</view>
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:right">
+		<switch bindchange="switch2Change"  type="checkbox" checked="{{web_mainData.bind_wechat=='true'?'true':'false'}}"/>
+	</view>
+</view>
+
+
+
+<button type='submit'  open-type="getUserInfo" bindgetuserinfo="submit" style="font-size:15px;color:#fff;width:550rpx;margin:200rpx auto;background:#FF9800;border-radius:50rpx;height:90rpx;line-height:90rpx">保 存</button>
+
+

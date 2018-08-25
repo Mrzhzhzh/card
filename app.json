@@ -3,6 +3,8 @@
     "pages/index/index",
     "pages/index/cat/cat",
     "pages/index/transaction/transaction",
+    "pages/index/map/map",
+    "pages/myNotice/myNotice",
     "pages/logs/logs",
     "pages/user_center/user_center",
     "pages/business_center/business_center",
@@ -13,6 +15,7 @@
     "pages/business_center/qr_code/qr_code",
     "pages/business_center/scan/scan",
     "pages/business_center/message/message",
+    "pages/business_center/data/data",
     "pages/user_center/login/login",
     "pages/user_center/qr_code/qr_code",
     "pages/user_center/scan/scan",
@@ -22,7 +25,9 @@
     "pages/user_center/aboutus/aboutus",
     "pages/user_center/feedback/feedback",
     "pages/user_center/message/message",
-    "pages/user_center/revise_phone/revise_phone"
+    "pages/user_center/revise_phone/revise_phone",
+    "pages/user_center/data/data",
+    "pages/register/register"
   ],
   "window": {
     "backgroundTextStyle": "light",

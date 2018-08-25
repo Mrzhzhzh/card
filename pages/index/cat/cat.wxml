@@ -11,11 +11,11 @@
   <image class='business_link_img' src='/images/ic_pe.png'></image>
   <text class='business_link_text'>联系人：{{web_mainData.small_title}}</text>
 </view>
-<view class='business_link'>
+<view class='business_link' bindtap="calling">
   <image class='business_link_img' src='/images/ic_tel.png'></image>
   <text class='business_link_text'>联系电话：{{web_mainData.contactPhone}}</text>
 </view>
-<view class='business_link' style='border:0;'>
+<view class='business_link' style='border:0;' data-path="/pages/index/map/map?id={{web_mainData.id}}"  bindtap='intoPath'>
   <image class='business_link_img' src='/images/ic_address.png'></image>
   <text class='business_link_text'>地址：{{web_mainData.description}}</text>
 </view>

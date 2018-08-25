@@ -4,4 +4,5 @@
   <input type='text' class='login_input' placeholder='请输入您的账号'></input>
   <input type='number' class='login_input' placeholder='请输入您的用户密码'></input>
   <button type='submit' class='login_submit'>登录</button>
+  
 </view>

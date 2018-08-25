@@ -15,7 +15,8 @@ Page({
     const self = this;
      console.log(options);
     self.setData({
-      code:options.qr_code
+      code:options.qr_code,
+      username:options.username
     })
   },
 

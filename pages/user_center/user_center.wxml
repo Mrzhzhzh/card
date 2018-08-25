@@ -16,7 +16,11 @@
   </view>
 
   <view class='user_class_list'>
-    <view class='user_class_li' data-path='/pages/user_center/qr_code/qr_code?qr_code={{web_userInfo.passage2.url}}'  bindtap='intoPath'>
+    <view class='user_class_li' data-path='/pages/user_center/data/data'  bindtap='intoPath'>
+      <image class='user_class_img' src='/images/my_3.png'></image>
+      <rich-text class='user_class_img'>我的信息</rich-text>
+    </view>
+    <view class='user_class_li' data-path='/pages/user_center/qr_code/qr_code?qr_code={{web_userInfo.passage2.url}}&&username={{web_userInfo.username}}'  bindtap='intoPath'>
       <image class='user_class_img' src='/images/my_1.png'></image>
       <rich-text class='user_class_img'>我的二维码</rich-text>
     </view>
@@ -25,7 +29,7 @@
       <rich-text class='user_class_img'>扫一扫</rich-text>
     </view>
     <view class='user_class_li' data-path='/pages/user_center/my_points/my_points'  bindtap='intoPath'>
-      <image class='user_class_img' src='/images/my_3.png'></image>
+      <image class='user_class_img' src='/images/my_11.png'></image>
       <rich-text class='user_class_img'>我的积分</rich-text>
     </view>
 
@@ -38,9 +42,14 @@
       <image class='user_class_img' src='/images/my_7.png'></image>
       <rich-text class='user_class_img'>关于我们</rich-text>
     </view>
-    <view class='user_class_li' data-path='/pages/user_center/feedback/feedback'  bindtap='intoPath'>
+    <view class='user_class_li' data-path='/pages/user_center/feedback/feedback'  bindtap='intoPath' style="border-bottom:2rpx #e5e5e5 solid;">
       <image class='user_class_img' src='/images/my_8.png'></image>
       <rich-text class='user_class_img'>意见反馈</rich-text>
+    </view>
+
+    <view class='user_class_li' data-path='/pages/myNotice/myNotice'  bindtap='intoPath' style="border-bottom:2rpx #e5e5e5 solid;">
+      <image class='user_class_img' src='/images/my_12.png'></image>
+      <rich-text class='user_class_img'>我的通知</rich-text>
     </view>
 
     <view class='user_class_li' data-path='/pages/business_center/modify_password/modify_password'  bindtap='intoPath' style="border-right: 2rpx #e5e5e5 solid;border-bottom:2rpx #e5e5e5 solid;">

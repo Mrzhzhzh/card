@@ -51,7 +51,7 @@
   height: 320rpx;
 }
 .text_name{
-  font-size: 36rpx;
+  font-size: 30rpx;
   color: #000;
   text-align: center;
 }

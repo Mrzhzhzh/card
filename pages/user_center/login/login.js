@@ -65,10 +65,13 @@ Page({
 
   },
 
-    intoPath(e){
-
+   intoPath(e){
       const self = this;
       api.pathTo(api.getDataSet(e,'path'),'tab');
+  },  
 
+   intoPathRedi(e){
+      const self = this;
+      api.pathTo(api.getDataSet(e,'path'),'redi');
   },
 })

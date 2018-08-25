@@ -56,15 +56,16 @@ Page({
   getUserData(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('token');
-    
+    postData.token = wx.getStorageSync('token'); 
     const callback = (res)=>{
-       console.log(res);
+      if(res.solely_code==200010){
+        api.showToast('账号未审核','fail')
+      };
       self.setData({
         web_userInfo:res,
       });
       self.getMenuData(res.passage1);
-     
+      
       wx.hideLoading();
     };
     api.userOne(postData,callback);

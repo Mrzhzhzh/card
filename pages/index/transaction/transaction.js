@@ -71,7 +71,6 @@ Page({
     const postData = {};
     postData.token = wx.getStorageSync('token');
     const callback = (res)=>{
-
       self.data.userInfo = res;
       self.setData({
         web_userInfo:self.data.userInfo,

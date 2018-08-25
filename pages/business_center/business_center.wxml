@@ -15,7 +15,19 @@
     
   </view>
   <view class='center_list'>
-    <view class='center_list_li' data-path='/pages/business_center/qr_code/qr_code?qr_code={{web_userInfo.passage2.url}}'  bindtap='intoPath'>
+    <view class='center_list_li' data-path='/pages/business_center/data/data'  bindtap='intoPath'>
+      <image class='center_icon' src='/images/ic merchant_5.png'></image>
+      <rich-text class='center_list_name'>我的信息</rich-text>
+      <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
+    </view> 
+
+    <view class='center_list_li' data-path='/pages/myNotice/myNotice'  bindtap='intoPath'>
+      <image class='center_icon' src='/images/ic merchant_16.png'></image>
+      <rich-text class='center_list_name'>我的通知</rich-text>
+      <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
+    </view>
+
+    <view class='center_list_li' data-path='/pages/business_center/qr_code/qr_code?qr_code={{web_userInfo.passage2.url}}&&username={{web_userInfo.username}}'  bindtap='intoPath'>
       <image class='center_icon' src='/images/ic merchant_1.png'></image>
       <rich-text class='center_list_name'>商家二维码</rich-text>
       <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>

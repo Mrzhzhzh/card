@@ -38,7 +38,6 @@ class Token {
     }
 
     getUserInfo(params,callback){
-
         var self = this;
         var wxUserInfo = {};
         if(wx.canIUse('button.open-type.getUserInfo')){
@@ -76,9 +75,10 @@ class Token {
         
     }
 
+
+
     getTokenFromServer(data,params,callback) {
         var self  = this;
-
         wx.login({
             success: function (res) {
                 var postData = {};
@@ -126,47 +126,54 @@ class Token {
 
 
 
+
+
     getToken(callback,params){
         if(wx.getStorageSync('login').username&&wx.getStorageSync('login').password){
-            var postData = {
-                username:wx.getStorageSync('login').username,
-                password:wx.getStorageSync('login').password,
-            }
-            wx.request({
-                url: 'https://www.yj-member.com/api/public/index.php/api/v1/User/Login',
-                method:'POST',
-                data:postData,
-                success:function(res){
-                    if(res.data&&res.data.token){
-                        wx.setStorageSync('token', res.data.token);
-                        var login = wx.getStorageSync('login');
-                        login.userType = res.data.userInfo.user_class;
-                        wx.setStorageSync('login',login);
-
-                        if(params&&callback){
-                            params.data.token = res.data.token;
-                            callback && callback(params);
-                        }else if(callback){
-                            callback && callback(res);
-                        };
-                        
-                    }else{
-                        wx.showToast({
-                            title: res.data.msg,
-                            icon: 'fail',
-                            duration: 1000,
-                            mask:true
-                        });
-                        wx.removeStorageSync('token');
-                        wx.removeStorageSync('login');
-                        wx.redirectTo({
-                            url:'/pages/user_center/login/login'
-                        })
+            wx.login({
+                success: function(res) {
+                    var code = res.code 
+                    var postData = {
+                        username:wx.getStorageSync('login').username,
+                        password:wx.getStorageSync('login').password,
+                        code:code
                     }
-                    
-                    
+                    wx.request({
+                        url: 'https://www.yj-member.com/api/public/index.php/api/v1/User/Login',
+                        method:'POST',
+                        data:postData,
+                        success:function(res){
+                            console.log(res)
+                            if(res.data&&res.data.token){
+                                wx.setStorageSync('token', res.data.token);
+                                var login = wx.getStorageSync('login');
+                                login.userType = res.data.userInfo.user_class;
+                                wx.setStorageSync('login',login);
+                                if(params&&callback){
+                                    params.data.token = res.data.token;
+                                    callback && callback(params);
+                                }else if(callback){
+                                    callback && callback(res);
+                                };
+                                
+                            }else{
+                                wx.showToast({
+                                    title: res.data.msg,
+                                    icon: 'fail',
+                                    duration: 1000,
+                                    mask:true
+                                });
+                                wx.removeStorageSync('token');
+                                wx.removeStorageSync('login');
+                                wx.redirectTo({
+                                    url:'/pages/user_center/login/login'
+                                })
+                            }           
+                        }
+                    })
                 }
-            })
+            });
+ 
         }else{
             wx.redirectTo({
               url: '/pages/user_center/login/login'

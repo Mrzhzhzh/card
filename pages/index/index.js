@@ -80,7 +80,6 @@ Page({
       parentid:8
     };
     const callback = (res)=>{
-      console.log(res);
       if(res.length>0){
         self.data.menuData.push.apply(self.data.menuData,res);
         self.setData({
@@ -95,7 +94,6 @@ Page({
   },
 
   getSliderData(){
-
         const self = this;
         const postData = {};
         postData.thirdapp_id = getApp().globalData.thirdapp_id;
@@ -103,7 +101,6 @@ Page({
           parentid:6
         };
         const callback = (res)=>{
-          console.log(res);
           self.setData({
             sliderData:res,
           });

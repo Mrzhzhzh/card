@@ -1,0 +1,24 @@
+<!--pages/user_center/my_points/my_points.wxml-->
+
+
+<view class="search" >
+
+  <view class="search-title {{key=='false'?'active':''}}" bindtap='menuClick' data-key='false' >
+    未读通知
+  </view>
+  <view class="search-title {{key=='true'?'active':''}}"  bindtap='menuClick' data-key='true' >
+    已读通知
+  </view>
+
+</view>
+
+
+<view class='income_list' >
+<block wx:for="{{web_mainData}}" wx:key="id">
+  <view class='income_list_li'>
+    <text class='income_list_txt1'>{{item.title}}</text>
+    <text class='income_list_txt2'>{{item.content}}</text>
+    <text class='income_list_txt3'>{{item.create_time}}</text>
+  </view>
+</block>
+</view>

@@ -52,6 +52,30 @@ class Api extends Base{
         this.request(allParams);
     }
 
+    userRegister(param,callback) {
+        var allParams = {
+            url:'User/Register',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }
+
+    getNoticeList(param,callback) {
+        var allParams = {
+            url:'Notice/GetList',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }
+
 
     articleList(param,callback) {
         var allParams = {

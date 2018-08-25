@@ -69,7 +69,8 @@ Page({
     const callback = (res)=>{
       console.log(res);
       self.setData({ 
-        score:res.score
+        score:res.score,
+        web_total_score:res.total_score
       });
       if(res.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.data);    
@@ -87,6 +88,7 @@ Page({
       wx.hideNavigationBarLoading();
       self.setData({
         web_mainData:self.data.mainData,
+
       });
     };
     api.scoreList(postData,callback);

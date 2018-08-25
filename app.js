@@ -6,7 +6,8 @@ import { Token } from 'utils/token.js';
 App({
   onLaunch: function () {
     var token = new Token();
-    //token.verify();
+    /*token.verify();*/
+
   },
   globalData: {
     thirdapp_id:1,

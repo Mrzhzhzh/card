@@ -36,9 +36,7 @@ Page({
         }else{
           wx.hideLoading();
           api.showToast('请补全信息','fail');
-        };
-        
-        
+        };    
       }
     }
     api.checkPhone(postData,callback);

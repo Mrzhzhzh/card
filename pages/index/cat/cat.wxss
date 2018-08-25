@@ -13,10 +13,11 @@
   margin-left: 30rpx;
 }
 .business_text_name{
-  font-size: 40rpx;
+  font-size: 34rpx;
   color: #101010;
-  line-height: 2;
+  line-height: 3;
   padding: 20rpx 0;
+  font-weight:bold
 }
 .business_text_class{
   font-size: 28rpx;

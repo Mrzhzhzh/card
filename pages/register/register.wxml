@@ -1,0 +1,23 @@
+<!--pages/teacher/data.wxml-->
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">姓名</view>
+	<input  type='text' style="font-size:15px;height:100rpx;line-height:100rpx;color:#999999;float:right;text-align:right" bindblur="changeBind" data-key="username" value="{{web_sForm.username}}" placeholder="请输入姓名"></input>
+</view>
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">电话</view>
+	<input type='number' style="font-size:15px;height:100rpx;line-height:100rpx;color:#999999;float:right;text-align:right" bindblur="changeBind" data-key="phone" value="{{web_sForm.phone}}" placeholder="请输入常用电话" ></input>
+</view>
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">身份证号</view>
+	<input type="idcard" style="font-size:15px;height:100rpx;line-height:100rpx;color:#999999;float:right;text-align:right" bindblur="changeBind" data-key="id_num" value="{{web_sForm.id_num}}" placeholder="请输入身份证号" ></input>
+</view>
+<view style="width:93.4%;height:100rpx;margin:0 auto;border-bottom:1px solid #e5e5e5;">
+	<view style="font-size:15px;color:#2e2e2e;line-height:100rpx;float:left">密码</view>
+	<input type="text"
+	style="font-size:15px;height:100rpx;line-height:100rpx;color:#999999;float:right;text-align:right" bindblur="changeBind" data-key="password" value="{{web_sForm.password}}" placeholder="请输入密码" ></input>
+</view>
+
+
+<button type='submit'  open-type="getUserInfo" bindgetuserinfo="submit" style="font-size:15px;color:#fff;width:550rpx;margin:200rpx auto;background:#FF9800;border-radius:50rpx;height:90rpx;line-height:90rpx">保 存</button>
+
+

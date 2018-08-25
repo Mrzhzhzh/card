@@ -1,15 +1,16 @@
 <!--pages/index/transaction.wxml-->
 
 <view style="font-size:18px;color:#808080;width:100%;text-align:center;margin:50px auto;">
-名称:{{web_userInfo.username}}
-<view>{{web_userInfo.user_class=='merchant'?'向用户收款':'向商户支付'}}</view>
+{{web_userInfo.user_class=='merchant'?'名称':'用户'}}:{{web_userInfo.username}}
+<view wx:if="{{web_userInfo.user_class=='merchant'}}">扣除用户{{web_userInfo.username}}积分</view>
+<view wx:else>向商户{{web_userInfoById.username}}支付积分</view>
 
 </view>
 
 <view class='pay_box'>
-  <view class='pay_txt'><image class='pay_img' src='/images/.png'></image><input type='pay' placeholder='请确认支付积分' data-key="score" bindchange="fillChange" ></input></view>
+  <view class='pay_txt'><image class='pay_img' src='/images/.png'></image><input type='pay' placeholder='请确认积分' data-key="score" bindchange="fillChange" ></input></view>
 </view>
 
 
 
-<button type='submit' class='submit' bindtap="submit">确认支付</button>
+<button type='submit' class='submit' bindtap="submit">{{web_userInfo.user_class=='merchant'?'确认扣除用户积分':'确认支付'}}</button>

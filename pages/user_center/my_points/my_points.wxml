@@ -7,7 +7,11 @@
   <view  class='user_top_img' style="width:132rpx;height:132rpx;border-radius:50%;overflow:hidden;">
     <open-data  type="userAvatarUrl"></open-data>
   </view>
-  <view class='main_top_txt' ><span><open-data  type="userNickName" ></open-data></span></view>
+  <view class='main_top_txt' >
+    <span><open-data  type="userNickName" ></open-data></span>
+    <view style="color:#FF9D00">总消费积分:{{web_total_score}}</view>
+  </view>
+  
 
 
   <view class='user_form' style="position:relative;">
@@ -50,7 +54,8 @@
 <view class='income_list' >
 <block wx:for="{{web_mainData}}" wx:key="id">
   <view class='income_list_li'>
-    <text class='income_list_txt1'>{{item.trade_info}}</text>
+    <text class='income_list_txt1'>{{item.shopinfo[0].title}}</text>
+    
     <text class='income_list_txt2'>{{item.scoreAmount}}</text>
     <text class='income_list_txt3'>{{item.create_time}}</text>
   </view>
