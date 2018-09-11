@@ -2,15 +2,64 @@
 
 <view style="font-size:18px;color:#808080;width:100%;text-align:center;margin:50px auto;">
 {{web_userInfo.user_class=='merchant'?'名称':'用户'}}:{{web_userInfo.username}}
-<view wx:if="{{web_userInfo.user_class=='merchant'}}">扣除用户{{web_userInfo.username}}积分</view>
-<view wx:else>向商户{{web_userInfoById.username}}支付积分</view>
+<view wx:if="{{web_userInfo.user_class=='merchant'}}" style="margin-top:15rpx">扣除用户<text style="font-weight:700"> {{web_userInfoById.username}} </text>积分</view>
+<view wx:else style="margin-top:15rpx">向商户<text style="font-weight:700"> {{web_userInfoById.username}} </text>支付积分</view>
 
 </view>
 
 <view class='pay_box'>
-  <view class='pay_txt'><image class='pay_img' src='/images/.png'></image><input type='pay' placeholder='请确认积分' data-key="score" bindchange="fillChange" ></input></view>
+  <view class='pay_txt'><image class='pay_img' src='/images/.png'></image><input type='pay' placeholder='请输入积分' data-key="score" bindchange="fillChange" ></input></view>
 </view>
 
 
 
 <button type='submit' class='submit' bindtap="submit">{{web_userInfo.user_class=='merchant'?'确认扣除用户积分':'确认支付'}}</button>
+
+<view style="{{isShow?'display:block':'display:none'}};width:100%;height:100%;background:#fff;opacity:0.5;position:absolute;top:0;z-index:998;" >
+</view>
+  <view class="qcored" style="{{isShow?'display:block':'display:none'}};z-index:999" wx:if="{{web_userInfo.user_class=='merchant'}}">
+    <view class="qcored_cont" >
+      <view class="close" bindtap="show" > 
+        <image src="/images/close_icon.png"></image>
+      </view>
+      <view style="font-size:20px;color:red;position:relative;width:280rpx;height:85rpx;margin:0 auto 20rpx">
+        <view class="qcored_bg" style="margin-top:15rpx">
+            <image src="/images/qcored_bg.png"></image>
+        </view>
+        <view style="font-size:20px;color:red;position:absolute;width:280rpx;height:85rpx;top:0;left:0;line-height:85rpx;text-align:center">扣除成功</view>
+      </view>
+
+       <view class="qcored_txt" style="font-size:15px;padding:0 20rpx">
+        本次扣除用户{web_userInfoById.username}}<text style="color:#06c1ae">{{web_score}}</text>积分
+      </view> 
+
+     
+
+    
+    </view>
+  </view>
+
+   <view class="qcored" style="{{isShow?'display:block':'display:none'}};z-index:999" wx:else>
+    <view class="qcored_cont" >
+      <view class="close" bindtap="show" > 
+        <image src="/images/close_icon.png"></image>
+      </view>
+      <view style="font-size:20px;color:red;position:relative;width:280rpx;height:85rpx;margin:0 auto 20rpx">
+        <view class="qcored_bg" style="margin-top:15rpx">
+            <image src="/images/qcored_bg.png"></image>
+        </view>
+        <view style="font-size:20px;color:red;position:absolute;width:280rpx;height:85rpx;top:0;left:0;line-height:85rpx;text-align:center">支付成功</view>
+      </view>
+
+       <view class="qcored_txt" style="font-size:15px;padding:0 20rpx">
+        本次支付<text style="color:#06c1ae">{{web_score}}</text>积分
+      </view> 
+
+  
+     
+      <view class="qcored_txt" style="font-size:15px;padding:0 20rpx;margin-top:20rpx">
+        收款商户:<text style="color:#666">{{web_userInfoById.username}}</text>
+      </view> 
+    
+    </view>
+  </view>

@@ -36,10 +36,14 @@ Page({
     const self = this;
     wx.setStorageSync('login',self.data.sForm);
     const callback = (res)=>{
-      if(res.data.userInfo.user_class=='customer'){
-        api.pathTo('/pages/user_center/user_center','tab')
+      if(res.solely_code==225010){
+        api.showToast(res.msg,'none')
       }else{
-        api.pathTo('/pages/business_center/business_center','tab')
+        if(res.data.userInfo.user_class=='customer'){
+          api.pathTo('/pages/user_center/user_center','tab')
+        }else{
+          api.pathTo('/pages/business_center/business_center','tab')
+        }      
       }
     };
     token.getToken(callback);
@@ -65,13 +69,18 @@ Page({
 
   },
 
-   intoPath(e){
-      const self = this;
-      api.pathTo(api.getDataSet(e,'path'),'tab');
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'tab');
+  },   
+
+  intoPathNav(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
   },  
 
-   intoPathRedi(e){
-      const self = this;
-      api.pathTo(api.getDataSet(e,'path'),'redi');
+  intoPathRedi(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'redi');
   },
 })

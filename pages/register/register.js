@@ -7,10 +7,11 @@ Page({
     sForm:{
       username:'',
       phone:'',
-      id_num:'',
+      cardID:'',
       password:''   
     },
     mainData:[],
+    isShow:false
 
   },
 
@@ -41,15 +42,34 @@ Page({
     const self = this;
     const postData = {};
     postData.token = wx.getStorageSync('token');
-    postData.username = self.data.sForm.username
+    postData.thirdapp_id = 1;
+    postData.username = self.data.sForm.username;
     postData.phone = self.data.sForm.phone;
-    postData.id_num = self.data.sForm.id_num;
+    postData.cardID = self.data.sForm.cardID;
     postData.password = self.data.sForm.password;
     const callback = (data)=>{
+      if(data.solely_code==100000){ 
+        self.show()
+      }else if(data.solely_code==205011){
+        api.showToast('用户名或手机号重复','none')
+      }
       wx.hideLoading();
-      api.dealRes(data);
     };
     api.userRegister(postData,callback);
+  },
+
+
+  show(){
+    const self = this;
+    if(self.data.isShow == false){
+      self.setData({
+        isShow:true
+      })
+    }else{
+      self.setData({
+        isShow:false
+      })
+    }
   },
 
 
@@ -59,19 +79,16 @@ Page({
   submit(){
     const self = this;
     var phone = self.data.sForm.phone;
-    var id_num = self.data.sForm.id_num;
+    var cardID = self.data.sForm.cardID;
     const pass = api.checkComplete(self.data.sForm);
     if(pass){
-      if(!id_num || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|[xX])$/.test(id_num)){
+      if(!cardID || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|[xX])$/.test(cardID)){
         api.showToast('身份证格式错误','fail')
       }else{
         if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
           api.showToast('手机格式错误','fail')
         }else{
-            self.userRegister();
-            setTimeout(function(){
-              api.pathTo('/pages/user_center/login/login','redi')
-          },1000);  
+          self.userRegister();
         }
       }
     }else{

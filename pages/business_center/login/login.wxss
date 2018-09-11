@@ -1,4 +1,5 @@
-/* pages/business_center/login/login.wxss */
+/* pages/user_center/login/login.wxss */
+
 .login_box{
   width: 100%;
   margin: 80rpx auto;
@@ -33,5 +34,3 @@
   line-height: 100rpx;
   border-radius: 50rpx;
 }
-
-

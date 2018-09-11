@@ -1,11 +1,12 @@
 <!--pages/business_center/qr_code/qr_code.wxml-->
-<view class='main_code' style="height:220rpx;position:relative">
+<view class='main_code' style="height:300rpx;position:relative">
   <view  class='user_top_img' style="width:140rpx;height:140rpx;border-radius:50%;overflow:hidden;position:absolute;top:10%;left:40%">
     <open-data  type="userAvatarUrl"></open-data>
   </view>
   <view style="width:100%;height:140rpx;position:absolute;top:64%;text-align:center;">
-     <span>昵称：<open-data  type="userNickName" ></open-data></span>
-     <view>用户名：{{username}}</view>
+     <span style="font-size:15px">昵称：<open-data  type="userNickName" ></open-data></span>
+     <view style="font-size:15px">尊敬的商家{{username}}</view>
+     <view style="font-size:15px">欢迎使用二维码，请给用户扫码！</view>
   </view>
 </view>
 <view class='codes'><image class='codes_img' src='{{code}}'></image></view>

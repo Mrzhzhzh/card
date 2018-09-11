@@ -1,41 +1,44 @@
 <!--pages/user_center/my_points/my_points.wxml-->
 <wxs src="../../../utils/func.wxs" module="func" />
+<view>
 
+  <view class='main_top_box' style="height:132rpx">
+    <view  class='user_top_img' style="width:132rpx;height:132rpx;border-radius:50%;overflow:hidden;">
+      <open-data  type="userAvatarUrl"></open-data>
+    </view>
 
+    <view class='main_top_txt' >
+      <span><open-data  type="userNickName" ></open-data></span>
+      <view style="color:#FF9D00" wx:if="{{func.checkEmptyObject(web_searchChange)}}">消费总积分:{{web_total_score}}</view>
+      <view style="color:#FF9D00" wx:elif="{{web_searchChange.order_type=='system'}}">调整总积分:{{web_total_score}}</view>
+       <view style="color:#FF9D00" wx:else="{{web_searchChange.ischeck=='true'}}">核销总积分:{{web_total_score}}</view>
+    </view>
 
-<view class='main_top_box' style="height:132rpx">
-  <view  class='user_top_img' style="width:132rpx;height:132rpx;border-radius:50%;overflow:hidden;">
-    <open-data  type="userAvatarUrl"></open-data>
   </view>
-  <view class='main_top_txt' >
-    <span><open-data  type="userNickName" ></open-data></span>
-    <view style="color:#FF9D00">总消费积分:{{web_total_score}}</view>
-  </view>
-  
 
 
-  <view class='user_form' style="position:relative;">
-    <picker style="width:100%" mode="date" value="{{start_time}}" start="1900-09-01" end="2050-09-01" data-key="start_time" bindchange="changeBind">
-      <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;display:flex;align-items:center">
-          <view style="margin-left:10rpx;">
-            {{start_time}}
+    <view class='user_form' style="position:relative;display:flex;border:1px solid #e5e5e5">
+        <picker style="width:100%" mode="date" value="{{start_time}}" start="1900-09-01" end="2050-09-01" data-key="start_time" bindchange="changeBind">
+          <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;align-items:center;justify-content:center;display:flex">
+            <view class='user_text' >开始日期:</view>
+              <view >
+                {{start_time}}
+              </view>     
           </view>
-          <view class='user_text' >开始日期</view>
-      </view>
-    </picker>
+        </picker>
 
-    <picker style="width:100%" mode="date" value="{{end_time}}" start="1900-09-01" end="2050-09-01" data-key="end_time" bindchange="changeBind">
-      <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;display:flex;align-items:center">
-          <view style="margin-left:10rpx;">
-            {{end_time}}
+        <picker style="width:100%" mode="date" value="{{end_time}}" start="1900-09-01" end="2050-09-01" data-key="end_time" bindchange="changeBind">
+          <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;align-items:center;justify-content:center;display:flex">
+            <view class='user_text' >截止日期:</view>
+              <view >
+                {{end_time}}
+              </view>
           </view>
-          <view class='user_text' >截止日期</view>
+        </picker>
       </view>
-    </picker>
-  </view>
-  
+    
+
 </view>
-
 <view class="search" >
 
   <view class="search-title {{func.checkEmptyObject(web_searchChange)?'active':''}}" bindtap='changeSearch' data-key='clear' >
@@ -54,8 +57,9 @@
 <view class='income_list' >
 <block wx:for="{{web_mainData}}" wx:key="id">
   <view class='income_list_li'>
-    <text class='income_list_txt1'>{{item.shopinfo[0].title}}</text>
-    
+    <text class='income_list_txt1'  wx:if="{{func.checkEmptyObject(web_searchChange)}}">{{item.cuser.nickname}}</text>
+     <text class='income_list_txt1' wx:elif="{{web_searchChange.order_type=='system'}}">系统调整</text>
+     <text class='income_list_txt1' wx:else="{{web_searchChange.ischeck=='true'}}">系统核销</text>
     <text class='income_list_txt2'>{{item.scoreAmount}}</text>
     <text class='income_list_txt3'>{{item.create_time}}</text>
   </view>

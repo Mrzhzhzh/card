@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -62,6 +62,17 @@
 					"pathName": "pages/index/transaction/transaction",
 					"query": "scene=2",
 					"scene": "1047"
+				},
+				{
+					"id": -1,
+					"name": "商户中心",
+					"pathName": "pages/business_center/business_center",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商户收入",
+					"pathName": "pages/business_center/income/income"
 				}
 			]
 		}

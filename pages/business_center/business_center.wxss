@@ -33,11 +33,11 @@
   line-height: 100rpx;
 }
 .center_icon{
-  width: 100rpx;
-  height: 100rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 .center_list_name{
-  font-size: 36rpx;
+  font-size: 30rpx;
   color: #101010;
   flex: 2;
   margin-left: 20rpx;
@@ -53,15 +53,15 @@
   top: -10rpx;
 }
 .center_list_go image{
-  width: 40rpx;
-  height: 40rpx;
+  width: 30rpx;
+  height: 30rpx;
 }
 .user_main_top{
   width: 100%;
   text-align: center;
   margin: 20rpx auto;
   position:relative;
-  height:220rpx
+  height:300rpx
 }
 .user_top_img{
   width: 140rpx;

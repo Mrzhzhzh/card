@@ -1,30 +1,34 @@
 <!--pages/business_center/income/income.wxml-->
-<view class='main_top_box' style="height:132rpx">
-  <view  class='user_top_img' style="width:132rpx;height:132rpx;border-radius:50%;overflow:hidden;">
-    <open-data  type="userAvatarUrl"></open-data>
-  </view>
-  <text class='main_top_txt' >积分：{{web_userscore}}</text>
-  
+<view >
+  <view class='main_top_box' style="height:132rpx">
 
-  <view class='user_form' style="position:relative;">
-    <picker style="width:100%" mode="date" value="{{start_time}}" start="1900-09-01" end="2050-09-01" data-key="start_time" bindchange="changeBind">
-      <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;display:flex;align-items:center">
-          <view style="margin-left:10rpx;">
-            {{start_time}}
-          </view>
-          <view class='user_text' >开始日期</view>
-      </view>
-    </picker>
-
-    <picker style="width:100%" mode="date" value="{{end_time}}" start="1900-09-01" end="2050-09-01" data-key="end_time" bindchange="changeBind">
-      <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;display:flex;align-items:center">
-          <view style="margin-left:10rpx;">
-            {{end_time}}
-          </view>
-          <view class='user_text' >截止日期</view>
-      </view>
-    </picker>
+    <view  class='user_top_img' style="width:132rpx;height:132rpx;border-radius:50%;overflow:hidden;">
+      <open-data  type="userAvatarUrl"></open-data>
+    </view>
+    <text class='main_top_txt' >总收入积分：{{web_userscore}}</text>
   </view>
+    
+    <view class='user_form' style="position:relative;display:flex;border:1px solid #e5e5e5">
+      <picker style="width:100%" mode="date" value="{{start_time}}" start="1900-09-01" end="2050-09-01" data-key="start_time" bindchange="changeBind">
+        <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;align-items:center;justify-content:center;display:flex">
+          <view class='user_text' >开始日期:</view>
+            <view >
+              {{start_time}}
+            </view>
+            
+        </view>
+      </picker>
+
+      <picker style="width:100%" mode="date" value="{{end_time}}" start="1900-09-01" end="2050-09-01" data-key="end_time" bindchange="changeBind">
+        <view class="picker" style="width:100%;height:100rpx;font-size:30rpx;color:#969696;align-items:center;justify-content:center;display:flex">
+          <view class='user_text' >截止日期:</view>
+            <view >
+              {{end_time}}
+            </view>
+        </view>
+      </picker>
+    </view>
+
 </view>
 <view class='income_title'>
   <rich-text class='income_title_name'><text>收入记录</text><image src='/images/my_9.png'></image></rich-text>

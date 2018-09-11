@@ -35,6 +35,9 @@ Page({
     postData.token = wx.getStorageSync('token');
     const callback = (res)=>{
       console.log(res)
+      if(res.solely_code==200010){
+        api.showToast('账号未审核,不能使用','none')
+      };
       self.data.mainData = res;
       self.data.sForm.username = self.data.mainData.username,
       self.data.sForm.phone = self.data.mainData.phone,

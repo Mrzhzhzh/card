@@ -50,18 +50,23 @@ Page({
     postData.token = wx.getStorageSync('token');
     postData.searchItem = api.cloneForm(self.data.searchItem);
     const callback = (res)=>{
-      console.log(res);
-      if(res.data.length>0){
-        self.data.mainData.push.apply(self.data.mainData,res.data);
+      if(res.solely_code==200010){
+        api.showToast('账号未审核，不能使用','none')
       }else{
-        self.data.isLoadAll = true;
-        wx.showToast({
-          title:'没有更多了',
-          icon:'fail',
-          duration:1000,
-          mask:true
-        });
-      };
+        if(res.data.length>0){
+          self.data.mainData.push.apply(self.data.mainData,res.data);
+        }else{
+          self.data.isLoadAll = true;
+          wx.showToast({
+            title:'没有更多了',
+            icon:'fail',
+            duration:1000,
+            mask:true
+          });
+        };
+
+      }
+      
       wx.hideLoading();;
       self.setData({
         web_mainData:self.data.mainData,

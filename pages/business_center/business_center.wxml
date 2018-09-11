@@ -5,7 +5,10 @@
     <view  class='user_top_img' style="width:140rpx;height:140rpx;border-radius:50%;overflow:hidden;position:absolute;top:0%;left:41%">
       <open-data  type="userAvatarUrl"></open-data>
     </view>
-    <view style="width:100%;height:40rpx;position:absolute;top:80%;text-align:center;display:flex">
+      <view style="width:100%;height:140rpx;position:absolute;top:55%;text-align:center;">
+       <span style="color:red">欢迎使用W管理积分系统！</span>
+    </view>
+    <view style="width:100%;height:40rpx;position:absolute;top:80%;text-align:center;display:flex;">
       <view style="font-size:14px;color:#101010;width:50%;border-right:1px solid #808080">昵称：<open-data  type="userNickName" ></open-data></view>
        <view style="font-size:14px;color:#101010;width:50%">商户名称：{{web_userInfo.username}}</view>
     </view>
@@ -15,15 +18,16 @@
     
   </view>
   <view class='center_list'>
-    <view class='center_list_li' data-path='/pages/business_center/data/data'  bindtap='intoPath'>
+
+  <view class='center_list_li' data-path='/pages/business_center/data/data'  bindtap='intoPath'>
       <image class='center_icon' src='/images/ic merchant_5.png'></image>
       <rich-text class='center_list_name'>我的信息</rich-text>
       <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
-    </view> 
+    </view>
 
-    <view class='center_list_li' data-path='/pages/myNotice/myNotice'  bindtap='intoPath'>
-      <image class='center_icon' src='/images/ic merchant_16.png'></image>
-      <rich-text class='center_list_name'>我的通知</rich-text>
+    <view class='center_list_li' bindtap='scanCode'>
+      <image class='center_icon' src='/images/ic merchant_2.png'></image>
+      <rich-text class='center_list_name'>扫一扫</rich-text>
       <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
     </view>
 
@@ -32,21 +36,31 @@
       <rich-text class='center_list_name'>商家二维码</rich-text>
       <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
     </view>
-    <view class='center_list_li' bindtap='scanCode'>
-      <image class='center_icon' src='/images/ic merchant_2.png'></image>
-      <rich-text class='center_list_name'>扫一扫</rich-text>
-      <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
-    </view>
-    <view class='center_list_li' data-path='/pages/business_center/write_off/write_off?username={{web_userInfo.username}}&score={{web_userInfo.user_score}}'  bindtap='intoPath'>
-      <image class='center_icon' src='/images/ic merchant_3.png'></image>
-      <rich-text class='center_list_name'>核销记录</rich-text>
-      <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
-    </view>
+
     <view class='center_list_li' data-path='/pages/business_center/income/income?username={{web_userInfo.username}}&score={{web_userInfo.user_score}}'  bindtap='intoPath'>
       <image class='center_icon' src='/images/ic merchant_4.png'></image>
       <rich-text class='center_list_name'>收入记录</rich-text>
       <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
     </view>
+
+    <view class='center_list_li' data-path='/pages/business_center/write_off/write_off?username={{web_userInfo.username}}&score={{web_userInfo.user_score}}'  bindtap='intoPath'>
+      <image class='center_icon' src='/images/ic merchant_3.png'></image>
+      <rich-text class='center_list_name'>核销记录</rich-text>
+      <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
+    </view>
+
+     
+
+    <view class='center_list_li' data-path='/pages/myNotice/myNotice'  bindtap='intoPath'>
+      <image class='center_icon' src='/images/ic merchant_16.png'></image>
+      <rich-text class='center_list_name'>我的通知</rich-text>
+      <icon class='center_list_go'><image src='/images/ic_return_1.png'></image></icon>
+    </view>
+
+    
+    
+    
+    
     
     <view class='center_list_li' data-path='/pages/business_center/modify_password/modify_password'  bindtap='intoPath'>
       <image class='center_icon' src='/images/ic merchant_6.png'></image>

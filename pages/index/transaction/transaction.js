@@ -9,6 +9,7 @@ Page({
     },
     userInfo:{},
     userInfoById:{},
+    isShow:false
     
   },
   
@@ -85,6 +86,9 @@ Page({
   fillChange(e){
     const self = this;
     api.fillChange(e,self,'sForm');
+    self.setData({
+      web_score:self.data.sForm.score
+    })
   },
 
   pay(funcName){
@@ -93,12 +97,17 @@ Page({
     postData.token = wx.getStorageSync('token');
     postData.id = self.data.userInfoById.id;
     const callback = (res)=>{
-      const pass = api.dealRes(res);
-      if(pass){
-        setTimeout(function(){
-           api.pathTo('/pages/index/index','tab');
-        },800)
-      }
+      if(res&&res.solely_code==100000){
+          setTimeout(function(){
+            self.setData({
+              buttonClicked: false
+            });
+            self.buttonClicked = false;
+          }, 1000)
+          setTimeout(function(){
+            self.show()
+          },1000);         
+        }; 
     };
     api[funcName](postData,callback);
   },
@@ -107,17 +116,58 @@ Page({
 
   submit(){
     const self = this;
+    if(self.buttonClicked){
+      return;
+    };
+    self.buttonClicked = true;
+    self.setData({
+      buttonClicked: true
+    });
     const pass = api.checkComplete(self.data.sForm);
     if(pass){
       if(self.data.userInfo.user_class=='merchant'){
         self.pay('chargeMerchant');
+        setTimeout(function(){
+            self.setData({
+              buttonClicked: false
+            });
+            self.buttonClicked = false;
+          }, 1000)  
       }else if(self.data.userInfo.user_class=='customer'){
         self.pay('payCusomer');
+        setTimeout(function(){
+            self.setData({
+              buttonClicked: false
+            });
+            self.buttonClicked = false;
+          }, 1000)  
       }
     }else{
-      api.showToast('请补全信息','fail')
+      api.showToast('请补全信息','fail');
+      setTimeout(function(){
+            self.setData({
+              buttonClicked: false
+            });
+            self.buttonClicked = false;
+          }, 1000)  
     }
-  }
+  },
+
+  show(){
+    const self = this;
+    if(self.data.isShow == false){
+      self.setData({
+        isShow:true
+      })
+    }else{
+      wx.navigateBack({
+        delta: 1
+      });
+      /*self.setData({
+        isShow:false
+      })*/
+    }
+  },
 
 
   

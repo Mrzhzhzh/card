@@ -145,6 +145,7 @@ class Token {
                         success:function(res){
                             console.log(res)
                             if(res.data&&res.data.token){
+                                wx.setStorageSync('info',res.data.userInfo);
                                 wx.setStorageSync('token', res.data.token);
                                 var login = wx.getStorageSync('login');
                                 login.userType = res.data.userInfo.user_class;
@@ -159,15 +160,15 @@ class Token {
                             }else{
                                 wx.showToast({
                                     title: res.data.msg,
-                                    icon: 'fail',
+                                    icon: 'none',
                                     duration: 1000,
                                     mask:true
                                 });
                                 wx.removeStorageSync('token');
                                 wx.removeStorageSync('login');
-                                wx.redirectTo({
+                                /*wx.redirectTo({
                                     url:'/pages/user_center/login/login'
-                                })
+                                })*/
                             }           
                         }
                     })

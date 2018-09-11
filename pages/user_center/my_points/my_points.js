@@ -71,24 +71,28 @@ Page({
     postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.searchItem = api.extend(postData.searchItem,self.data.searchChange)
     const callback = (res)=>{
-      console.log(res);
-    
-      self.setData({ 
-        score:res.user_score,
-        web_total_score:res.total_score
-      });
-      if(res.data.length>0){
-        self.data.mainData.push.apply(self.data.mainData,res.data); 
+      console.log(postData.searchItem)
+      if(res.solely_code==200010){
+        api.showToast('账号未审核,不能使用','none')
       }else{
-        self.data.isLoadAll = true;
-        wx.showToast({
-          title:'没有更多了',
-          icon:'fail',
-          duration:1000,
-          mask:true
+        self.setData({ 
+          score:res.user_score,
+          web_total_score:res.total_score
         });
+        if(res.data.length>0){
+          self.data.mainData.push.apply(self.data.mainData,res.data); 
+        }else{
+          self.data.isLoadAll = true;
+          wx.showToast({
+            title:'没有更多了',
+            icon:'fail',
+            duration:1000,
+            mask:true
+          });
+        };
+      }
+    
 
-      };
       wx.hideLoading();
       wx.stopPullDownRefresh();
       wx.hideNavigationBarLoading();
@@ -109,7 +113,7 @@ Page({
     if(key!='clear'){
       self.data.searchChange[key] = api.getDataSet(e,'value');
     }else{
-      self.data.searchChange.pay_user = wx.getStorageSync('token');
+      self.data.searchChange.pay_user = wx.getStorageSync('token');    
     }
     self.setData({
       web_searchChange:self.data.searchChange

@@ -59,7 +59,7 @@ Page({
     postData.token = wx.getStorageSync('token'); 
     const callback = (res)=>{
       if(res.solely_code==200010){
-        api.showToast('账号未审核','fail')
+        api.showToast('账号未审核,不能使用','none')
       };
       self.setData({
         web_userInfo:res,

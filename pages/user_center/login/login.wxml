@@ -7,6 +7,6 @@
   <button type='submit' class='login_submit' bindtap="check" >登录</button>
 
   
-  <view style="font-size:14px;color:#666;text-align:center;margin-top:50px" data-path="/pages/register/register"  bindtap='intoPath'>没有账号？去注册</view>
+  <view style="font-size:16px;color:#666;text-align:center;margin-top:50px;font-weight:bold" data-path="/pages/register/register"  bindtap='intoPathNav'>没有账号？去注册</view>
   
 </view>

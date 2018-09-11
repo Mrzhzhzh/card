@@ -339,18 +339,18 @@ class Base extends Token{
 
     checkLogin(userType){
         const self = this;
-        if(userType){
+        if(userType=='merchant'){
             if(wx.getStorageSync('login')&&wx.getStorageSync('token')&&wx.getStorageSync('login').userType==userType){
                 return wx.getStorageSync('login');
             }else{
                 setTimeout(function(){
-                    self.pathTo('/pages/user_center/login/login','redi');
+                    self.pathTo('/pages/business_center/login/login','redi');
                 },500);
                 
                 return false;
             };
-        }else{
-            if(wx.getStorageSync('login')&&wx.getStorageSync('token')){
+        }else if(userType=='customer'){
+            if(wx.getStorageSync('login')&&wx.getStorageSync('token')&&wx.getStorageSync('login').userType==userType){
                 return wx.getStorageSync('login');
             }else{
                 setTimeout(function(){
@@ -359,7 +359,18 @@ class Base extends Token{
                 
                 return false;
             };
-        };
+        }else{
+
+            if(wx.getStorageSync('login')&&wx.getStorageSync('token')){
+                return wx.getStorageSync('login');
+            }else{
+                setTimeout(function(){
+                    self.pathTo('/pages/user_center/login/login','redi'); 
+                },500);  
+
+                return false;
+            };
+        }
 
         
         wx.hideLoading();
@@ -381,6 +392,8 @@ class Base extends Token{
 
         const self = this;
         wx.removeStorageSync('login');
+        wx.removeStorageSync('info');
+        wx.removeStorageSync('token');
         if(!wx.removeStorageSync('login')){
             self.pathTo('/pages/user_center/login/login','redi')
         }else{
